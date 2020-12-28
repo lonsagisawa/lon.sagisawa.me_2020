@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Head from "../components/helmet"
 import Bio from "../components/bio"
+import Img from "gatsby-image"
 
 export default function Post({ pageContext }) {
     const { title, date, cover, description } = pageContext.post;

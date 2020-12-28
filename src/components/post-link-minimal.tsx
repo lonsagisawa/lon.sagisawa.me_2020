@@ -8,7 +8,7 @@ export default function PostLinkMinimal({ post }) {
 
     return (
             <div>
-                <date>{ date }</date> - <Link to={ pageLink }>{ title }</Link>
+                { date } - <Link to={ pageLink }>{ title }</Link>
                 <p>{ description }</p>
             </div>
     )

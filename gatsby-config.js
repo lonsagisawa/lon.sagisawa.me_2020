@@ -9,6 +9,7 @@ require('dotenv').config({
 })
 
 const path = require(`path`)
+const { lazy } = require('react')
 
 module.exports = {
   plugins: [
@@ -48,8 +49,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
-              maxWidth: 2048,
+              maxWidth: 750,
               withWebp: true,
+              loading: lazy,
             },
           },
         ],

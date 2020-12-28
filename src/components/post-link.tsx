@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 export default function PostLink({ post }) {
     const { title, date, cover } = post;
@@ -8,14 +9,10 @@ export default function PostLink({ post }) {
 
     return (
         <div className="postlist_item">
-            <div>
-                <img src={ cover.file.url } alt="post-cover" className="cover"></img>
-            </div>
-            <div>
-                <h2><Link to={ pageLink }>{ title }</Link></h2>
-                <p>{ description }</p>
-                <p>{ date }</p>
-            </div>
+            <Img fluid={ cover.fluid } key={ cover.fluid.src } alt={ cover.fluid.title } className="cover"></Img>
+            <h2><Link to={ pageLink }>{ title }</Link></h2>
+            <p>{ description }</p>
+            <p>{ date }</p>
         </div>
     )
 }

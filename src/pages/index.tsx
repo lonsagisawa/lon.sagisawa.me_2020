@@ -31,6 +31,9 @@ export const query = graphql`
         month: date(formatString: "MM")
         cover {
           title
+          fluid(maxWidth: 750) {
+            ...GatsbyContentfulFluid_withWebp
+          }
           file {
             url
           }
