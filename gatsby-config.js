@@ -9,7 +9,6 @@ require('dotenv').config({
 })
 
 const path = require(`path`)
-const { lazy } = require('react')
 
 module.exports = {
   plugins: [
@@ -51,7 +50,7 @@ module.exports = {
             options: {
               maxWidth: 750,
               withWebp: true,
-              loading: lazy,
+              loading: "lazy",
             },
           },
         ],
