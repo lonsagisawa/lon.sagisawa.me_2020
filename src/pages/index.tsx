@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import Header from "../components/header"
 import PostLink from "../components/post-link"
 import { Link, graphql } from "gatsby"
 import Head from "../components/helmet"
