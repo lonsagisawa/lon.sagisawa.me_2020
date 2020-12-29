@@ -13,7 +13,7 @@ export default function Post({ pageContext }) {
         <Layout>
             <Head title={ title + ` :: Lon Sagisawa` } description={ description } />
             <Header />
-            <img src={ cover.file.url } alt="post-cover" className="cover"></img>
+            <Img key={ cover.fluid.src } alt="post-cover" fluid={ cover.fluid } className="cover" />
             <div>
                 <h1>{ title }</h1>
                 <p>{ date }</p>
