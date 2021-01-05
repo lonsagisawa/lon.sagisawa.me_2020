@@ -66,7 +66,7 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/images/logo.png`,
-        cache_bursting_mode: `none`,
+        cache_busting_mode: `none`,
       },
     },
     {
