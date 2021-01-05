@@ -66,12 +66,14 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/images/logo.png`,
+        cache_bursting_mode: `none`,
       },
     },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
         workboxConfig: {
+          globPatterns: [ '**/icon-path*' ]
           runtimeCaching: [
             {
               /* Contentfulで更新した記事が反映されない問題を解消 */
