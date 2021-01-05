@@ -73,7 +73,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         workboxConfig: {
-          globPatterns: [ '**/icon-path*' ]
+          globPatterns: [ '**/icons*' ],
           runtimeCaching: [
             {
               /* Contentfulで更新した記事が反映されない問題を解消 */
