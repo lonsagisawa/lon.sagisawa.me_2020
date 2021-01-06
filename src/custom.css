@@ -2,16 +2,31 @@
 :root {
     --nc-font-sans: Inter, 'Hiragino Sans', 'Meiryo', sans-serif;
     --nc-font-mono: 'Iosevka Web', monospace;
-    --nc-lk-1: #e045b7;
+    --nc-lk-1: #f720bd;
     --nc-lk-2: #f720bd;
+}
+@supports (font-variation-settings: normal) {
+    :root {
+        --nc-font-sans: 'Inter var', 'Hiragino Sans', 'Meiryo', sans-serif;
+    }
 }
 
 body {
     line-height: 1.75;
 }
 
+@font-face {
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("league-spartan/LeagueSpartan-Bold.woff2") format("woff2")
+}
+
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.25;
+    font-family: 'League Spartan', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-weight: 700;
 }
 
 code {
@@ -19,19 +34,27 @@ code {
 }
 
 /* Header */
+header {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+}
+
 header a {
-    color: var(--nc-fg-1);
+    color: var(--nc-tx-1);
     text-decoration: none;
 }
 
 header a:hover {
+    color: var(--nc-tx-1);
     text-decoration: underline;
 }
 
 /* Article */
 .cover {
     width: 100%;
-    border-radius: 15px; 
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
 }
 
 /* Article List */
@@ -42,6 +65,7 @@ header a:hover {
 
 /* Bio */
 .bio {
+    color: var(--nc-tx-2);
     padding: 5px;
     margin: 4rem 0;
     background: var(--nc-bg-2);
