@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 export default function Header() {
     return (
         <header>
-            <h1><Link to="/">Lon Sagisawa</Link></h1>
-            <p><Link to="/archive">すべての記事</Link></p>
+            <h1 className="title"><Link to="/">Lon Sagisawa</Link></h1>
         </header>
     )
 }

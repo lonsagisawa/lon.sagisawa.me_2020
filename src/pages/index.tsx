@@ -3,18 +3,15 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import { Link, graphql } from "gatsby"
 import Head from "../components/helmet"
-import Bio from "../components/bio"
 
 export default function Home({ data }) {
   return (
   <Layout>
       <Head title="Lon Sagisawa" description="Private website of Lon Sagisawa" />
-      <Bio />
-      <h2>最新の記事</h2>
       {data.allContentfulPost.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node} />
       )}
-      <Link to="/archive">すべての記事を見る</Link>
+      <Link to="/archive">→ すべての記事を見る</Link>
   </Layout>
     
   )
