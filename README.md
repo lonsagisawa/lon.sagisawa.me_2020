@@ -27,3 +27,4 @@ gatsby develop
 
 * [Gatsby入門](https://zenn.dev/tomokiya/books/4b13342f6d878b93e06c) (Japanese) - This inspired me to try Gatsby again. This repo is basically result of this hands on article.
 * Based on [gatsbyjs/gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world)
+* [Nord](https://www.nordtheme.com/) for pleasant looking color-scheme

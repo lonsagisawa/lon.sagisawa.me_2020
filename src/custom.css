@@ -1,10 +1,45 @@
-/* Typography */
+/* Typography and Color Scheme */
 :root {
     --nc-font-sans: Inter, 'Hiragino Sans', 'Meiryo', sans-serif;
     --nc-font-mono: 'Iosevka Web', monospace;
-    --nc-lk-1: #f720bd;
-    --nc-lk-2: #f720bd;
+    /* Nord color scheme */
+    /* Light */
+    --nc-tx-1: #2e3440;
+    --nc-tx-2: #3b4252;
+    --nc-bg-1: #eceff4;
+    --nc-bg-2: #e5e9f0;
+    --nc-bg-3: #d8dee9;
+    --nc-lk-1: #5e81ac;
+    --nc-lk-2: #81a1c1;
+    --nc-ac-1: #5e81ac;
+    --nc-ac-tx: #eceff4;
+    /* Dark */
+    --nc-d-tx-1: #d8dee9;
+    --nc-d-tx-2: #e5e9f0;
+    --nc-d-bg-1: #2e3440;
+    --nc-d-bg-2: #3b4252;
+    --nc-d-bg-3: #434c5e;
+    --nc-d-lk-1: #81a1c1;
+    --nc-d-lk-2: #5e81ac;
+    --nc-d-ac-1: #5e81ac;
+    --nc-d-ac-tx: var(--nc-ac-tx);
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--nc-tx-1: var(--nc-d-tx-1);
+		--nc-tx-2: var(--nc-d-tx-2);
+		--nc-bg-1: var(--nc-d-bg-1);
+		--nc-bg-2: var(--nc-d-bg-2);
+		--nc-bg-3: var(--nc-d-bg-3);
+		--nc-lk-1: var(--nc-d-lk-1);
+		--nc-lk-2: var(--nc-d-lk-2);
+		--nc-lk-tx: var(--nc--dlk-tx);
+		--nc-ac-1: var(--nc-d-ac-1);
+		--nc-ac-tx: var(--nc--dac-tx);
+	}
+}
+
 @supports (font-variation-settings: normal) {
     :root {
         --nc-font-sans: 'Inter var', 'Hiragino Sans', 'Meiryo', sans-serif;
@@ -27,6 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.25;
     font-family: 'League Spartan', 'Hiragino Sans', 'Meiryo', sans-serif;
     font-weight: 700;
+    border: 0;
 }
 
 code {
