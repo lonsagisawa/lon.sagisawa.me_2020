@@ -38,11 +38,9 @@ module.exports = {
         gfm: true,
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-shiki`,
             options: {
-              lassPrefix: "language-",
-              inlineCodeMarker: "›",
-              showLineNumbers: true,
+              theme: 'nord',
             },
           },
           {
