@@ -1,7 +1,7 @@
 /* Typography and Color Scheme */
 :root {
-    --nc-font-sans: Inter, 'Hiragino Sans', 'Meiryo', sans-serif;
-    --nc-font-mono: 'Iosevka Web', monospace;
+    --nc-font-sans: Inter, 'Noto Sans JP', sans-serif;
+    --nc-font-mono: 'Fira Code', monospace;
     /* Nord color scheme */
     /* Light */
     --nc-tx-1: #2e3440;
@@ -40,27 +40,13 @@
 	}
 }
 
-@supports (font-variation-settings: normal) {
-    :root {
-        --nc-font-sans: 'Inter var', 'Hiragino Sans', 'Meiryo', sans-serif;
-    }
-}
-
 body {
     line-height: 1.75;
 }
 
-@font-face {
-    font-family: 'League Spartan';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("league-spartan/LeagueSpartan-Bold.woff2") format("woff2")
-}
-
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.25;
-    font-family: 'League Spartan', 'Hiragino Sans', 'Meiryo', sans-serif;
+    line-height: 1.20;
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
     font-weight: 700;
     border: 0;
 }
