@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Bio() {
     return (
@@ -9,9 +9,7 @@ export default function Bio() {
             {
                 file(relativePath: { eq: "logo.png" }){
                     childImageSharp {
-                        fixed(width: 180, height: 180) {
-                            ...GatsbyImageSharpFixed_withWebp
-                        }
+                        gatsbyImageData(layout: FIXED, width: 180, height: 180)
                     }
                 }
             }
@@ -19,7 +17,7 @@ export default function Bio() {
         render = { data => (
             <div className="bio">
                 <div className="bio_header">
-                    <Img fixed={data.file.childImageSharp.fixed} className="bio_img" />
+                    <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} className="bio_img" />
                     <div className="bio_side">
                         <h1 className="bio_title">Lon Sagisawa</h1>
                         <p className="bio_text">福井県在住の1995年生まれ男性。ゲームしたり写真を撮ったりコードを書いたりして過ごしています。日本国内でお仕事募集中。</p>
