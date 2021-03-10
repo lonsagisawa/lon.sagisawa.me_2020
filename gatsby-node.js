@@ -13,15 +13,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         year: date(formatString: "YYYY")
                         month: date(formatString: "MM")
                         cover {
-                            fluid(maxWidth: 750, quality: 100) {
-                                srcWebp
-                                srcSetWebp
-                                srcSet
-                                src
-                                sizes
-                                aspectRatio
-                                base64
-                            }
+                            gatsbyImageData(
+                                layout: FULL_WIDTH,
+                                quality: 100,
+                                placeholder: BLURRED
+                            )
+                            title
                         }
                         description {
                             description

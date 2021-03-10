@@ -26,13 +26,12 @@ export const query = graphql`
         year: date(formatString: "YYYY")
         month: date(formatString: "MM")
         cover {
+          gatsbyImageData(
+            layout: FULL_WIDTH,
+            quality: 100,
+            placeholder: BLURRED
+        )
           title
-          fluid(maxWidth: 750, quality: 100) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-          file {
-            url
-          }
         }
         description {
           description
