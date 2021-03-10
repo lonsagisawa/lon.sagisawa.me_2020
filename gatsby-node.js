@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         year: date(formatString: "YYYY")
                         month: date(formatString: "MM")
                         cover {
-                            fluid(maxWidth: 750) {
+                            fluid(maxWidth: 750, quality: 100) {
                                 srcWebp
                                 srcSetWebp
                                 srcSet

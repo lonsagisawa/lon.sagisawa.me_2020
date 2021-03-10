@@ -13,7 +13,6 @@ export default function Home({ data }) {
       )}
       <Link to="/archive">→ すべての記事を見る</Link>
   </Layout>
-    
   )
 }
 
@@ -28,7 +27,7 @@ export const query = graphql`
         month: date(formatString: "MM")
         cover {
           title
-          fluid(maxWidth: 750) {
+          fluid(maxWidth: 750, quality: 100) {
             ...GatsbyContentfulFluid_withWebp
           }
           file {
