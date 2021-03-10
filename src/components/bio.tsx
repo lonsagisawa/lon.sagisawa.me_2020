@@ -17,7 +17,7 @@ export default function Bio() {
         render = { data => (
             <div className="bio">
                 <div className="bio_header">
-                    <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} className="bio_img" />
+                    <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} alt="logo" className="bio_img" />
                     <div className="bio_side">
                         <h1 className="bio_title">Lon Sagisawa</h1>
                         <p className="bio_text">福井県在住の1995年生まれ男性。ゲームしたり写真を撮ったりコードを書いたりして過ごしています。日本国内でお仕事募集中。</p>
