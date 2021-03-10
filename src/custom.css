@@ -96,9 +96,16 @@ header a:hover {
     padding: 2rem 1rem;
 }
 
+.bio_img img {
+    border-radius: 50%;
+}
+
 @media (max-width: 639px) {
     .bio {
         text-align: center;
+    }
+    .bio_img {
+        margin: 0 auto;
     }
 }
 
@@ -111,9 +118,4 @@ header a:hover {
     .bio_side {
         max-width: 25rem;
     }
-}
-
-.bio_img {
-    margin: 0 auto;
-    border-radius: 50%;
 }
