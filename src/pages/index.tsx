@@ -30,7 +30,7 @@ export const query = graphql`
             layout: FULL_WIDTH,
             quality: 100,
             placeholder: BLURRED
-        )
+          )
           title
         }
         description {
