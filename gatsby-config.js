@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-shiki`,
             options: {
-              theme: 'nord',
+              theme: `nord`,
             },
           },
           {
@@ -50,7 +50,9 @@ module.exports = {
             options: {
               maxWidth: 750,
               withWebp: true,
-              loading: "lazy",
+              loading: `lazy`,
+              sizeByPixelDensity: true,
+              backgroundColor: `#eceff4`,
             },
           },
         ],
