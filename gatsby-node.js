@@ -15,8 +15,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         cover {
                             gatsbyImageData(
                                 layout: FULL_WIDTH,
-                                quality: 100,
-                                placeholder: BLURRED
+                                quality: 90,
+                                placeholder: NONE,
+                                backgroundColor: "#434c5e"
                             )
                             title
                         }
