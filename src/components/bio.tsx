@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 export default function Bio() {
     return (
-        <div className="bio">
+        <footer className="bio">
             <div className="bio_header">
                 <StaticImage src="../images/logo.png" alt="logo" width={180} height={180} className="bio_img" />
                 <div className="bio_side">
@@ -13,6 +13,6 @@ export default function Bio() {
                     <p className="bio_text"><Link to="https://fedibird.com/@ls" rel="me">Mastodon</Link> / <Link to="https://github.com/lonsagisawa">GitHub</Link> / <Link to="https://twitter.com/lsgsw">Twitter</Link> / <Link to="https://twitch.tv/lonsagisawa">Twitch</Link></p>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

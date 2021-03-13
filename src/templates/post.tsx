@@ -14,11 +14,13 @@ export default function Post({ pageContext }) {
         <Layout>
             <Head title={ title + ` :: Lon Sagisawa` } description={ description } />
             <GatsbyImage image={ coverImg } alt={ coverTitle } className="cover" />
-            <div>
-                <h1>{ title }</h1>
-                <p>{ date }</p>
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: body }} />
+            <article>
+                <div>
+                    <h1>{ title }</h1>
+                    <p>{ date }</p>
+                </div>
+                <div dangerouslySetInnerHTML={{ __html: body }} />
+            </article>
             <hr />
             <Link to="/archive">→ 他の記事を見る</Link>
         </Layout>
