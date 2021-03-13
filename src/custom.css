@@ -1,6 +1,6 @@
 /* Typography and Color Scheme */
 :root {
-    --nc-font-sans: Inter, "Yu Gothic Medium", sans-serif;
+    --nc-font-sans: Inter, "Hiragino Sans", Meiryo, sans-serif;
     --nc-font-mono: "Fira Code", monospace;
     /* Nord color scheme */
     /* Light */
@@ -48,7 +48,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    font-family: Montserrat, "Yu Gothic", sans-serif;
+    font-family: Montserrat, "Hiragino Sans", Meiryo, sans-serif;
     font-weight: 700;
     border: 0;
 }
@@ -87,6 +87,7 @@ header a:hover {
 .cover {
     width: 100%;
     margin-bottom: 0.5rem;
+    border-radius: 20px;
 }
 
 .cover img {
@@ -147,4 +148,3 @@ header a:hover {
 main, .bio {
     animation: fadeIn 0.5s ease 0s 1 normal;
 }
-
