@@ -1,4 +1,6 @@
 const path = require("path")
+const fs = require("fs")
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
 
@@ -53,3 +55,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
     });
 }
+
+exports.onPostBuild = () => {
+    fs.copyFile(`./firebase.json`, `./public/firebase.json`, (err) => {
+        if (err) {
+            throw err;
+        }
+    });
+};
