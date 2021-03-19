@@ -146,5 +146,5 @@ header a:hover {
 }
 
 main, .bio {
-    animation: fadeIn 0.5s ease 0s 1 normal;
+    animation: fadeIn 0.25s ease 0s 1 normal;
 }
