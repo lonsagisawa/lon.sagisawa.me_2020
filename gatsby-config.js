@@ -11,6 +11,11 @@ require('dotenv').config({
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `Lon Sagisawa`,
+    description: `private blog of Lon Sagisawa`,
+    siteUrl: `https://lon.sagisawa.me`
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -83,6 +88,62 @@ module.exports = {
           ]
         },
       },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                description
+                siteUrl
+                title
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulPost } }) => {
+              return allContentfulPost.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  description: edge.node.description.description,
+                  date: edge.node.date,
+                  url: site.siteMetadata.siteUrl + edge.node.prefix + edge.node.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.prefix + edge.node.slug,
+                  custom_elements: [{ "content:encoded": edge.node.body.childMarkdownRemark.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allContentfulPost(sort: {order: DESC, fields: date}) {
+                  edges {
+                    node {
+                      title
+                      date
+                      prefix: date(formatString: "YYYY/MM/")
+                      description {
+                        description
+                      }
+                      slug
+                      body {
+                        childMarkdownRemark {
+                          html
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Lon Sagisawa :: RSS feed",
+          }
+        ]
+      }
     },
   ],
 }
