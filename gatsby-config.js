@@ -70,7 +70,10 @@ module.exports = {
         background_color: `#404040`,
         theme_color: `#ffffff`,
         display: `standalone`,
-        icon: `src/images/logo.png`,
+        icon: `src/images/maskable_icon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
         cache_busting_mode: `none`,
       },
     },
