@@ -124,7 +124,7 @@ module.exports = {
                     node {
                       title
                       date
-                      prefix: date(formatString: "YYYY/MM/")
+                      prefix: date(formatString: "/YYYY/MM/")
                       description {
                         description
                       }
