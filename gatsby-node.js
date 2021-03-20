@@ -7,7 +7,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const result = await graphql(
         `
         {
-            allContentfulPost {
+            allContentfulPost(sort: {fields: date, order: ASC}) {
                 edges {
                     node {
                         title
@@ -33,6 +33,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             }
                         }
                     }
+                    next {
+                        title
+                        prefix: date(formatString: "/YYYY/MM/")
+                        slug
+                        cover {
+                            gatsbyImageData(
+                                width: 360,
+                                layout: FULL_WIDTH,
+                                quality: 90,
+                                placeholder: NONE,
+                                backgroundColor: "#434c5e",
+                                aspectRatio: 2.5
+                            )
+                        }
+                    }
+                    previous {
+                        title
+                        prefix: date(formatString: "/YYYY/MM/")
+                        slug
+                        cover {
+                            gatsbyImageData(
+                                width: 360,
+                                layout: FULL_WIDTH,
+                                quality: 90,
+                                placeholder: NONE,
+                                backgroundColor: "#434c5e",
+                                aspectRatio: 2.5
+                            )
+                        }
+                    }
                 }
             }
         }
@@ -51,7 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             // permalink
             path: `/${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
             component: path.resolve("./src/templates/post.tsx"),
-            context: { post: edge.node }
+            context: { post: edge.node, next: edge.next, prev: edge.previous }
         })
     });
 }

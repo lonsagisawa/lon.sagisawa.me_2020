@@ -3,12 +3,16 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/helmet"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import PostNav from "../components/post-nav"
 
 export default function Post({ pageContext }) {
     const { title, date, description } = pageContext.post;
     const coverImg = getImage(pageContext.post.cover);
     const coverTitle = pageContext.post.cover.title;
     const body = pageContext.post.body.childMarkdownRemark.html;
+
+    const next = pageContext.next;
+    const prev = pageContext.prev;
 
     return (
         <Layout>
@@ -22,7 +26,8 @@ export default function Post({ pageContext }) {
                 <div dangerouslySetInnerHTML={{ __html: body }} />
             </article>
             <hr />
-            <Link to="/archive">→ 他の記事を見る</Link>
+
+            <PostNav next={ next } prev={ prev } />
         </Layout>
     )
 }

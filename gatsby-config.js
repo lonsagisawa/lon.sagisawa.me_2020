@@ -50,7 +50,6 @@ module.exports = {
               maxWidth: 750,
               withWebp: true,
               loading: `lazy`,
-              sizeByPixelDensity: true,
               backgroundColor: `#eceff4`,
             },
           },
