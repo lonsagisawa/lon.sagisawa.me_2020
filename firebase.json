@@ -9,6 +9,18 @@
             {
               "key": "cache-control",
               "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "content-security-policy",
+              "value": "default-src 'self' images.ctfassets.net"
             }
           ]
         },
