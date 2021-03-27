@@ -20,7 +20,7 @@
             },
             {
               "key": "content-security-policy",
-              "value": "default-src 'self' images.ctfassets.net"
+              "value": "default-src 'self' images.ctfassets.net; script-src 'self' 'unsafe-inline'"
             }
           ]
         },
