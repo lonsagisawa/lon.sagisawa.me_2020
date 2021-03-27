@@ -1,6 +1,7 @@
 /* Typography and Color Scheme */
 :root {
-    --nc-font-sans: Inter, "Hiragino Sans", Meiryo, sans-serif;
+    --nc-font-sans: Inter, "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+    --heading-fonts: Montserrat, "Hiragino Sans", "BIZ UDPGothic", Meriyo, sans-serif;
     --nc-font-mono: "Fira Code", monospace;
     /* Nord color scheme */
     /* Light */
@@ -49,7 +50,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    font-family: Montserrat, "Hiragino Sans", Meiryo, sans-serif;
+    font-family: var(--heading-fonts);
     font-weight: 700;
     border: 0;
 }
