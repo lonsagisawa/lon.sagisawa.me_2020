@@ -17,10 +17,6 @@
             {
               "key": "x-frame-options",
               "value": "DENY"
-            },
-            {
-              "key": "content-security-policy",
-              "value": "default-src 'self' 'unsafe-inline' images.ctfassets.net"
             }
           ]
         },
