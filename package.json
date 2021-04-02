@@ -27,6 +27,7 @@
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-postcss": "^4.2.0",
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-plugin-typescript": "^3.1.0",
     "gatsby-remark-images": "^4.1.1",
@@ -36,14 +37,15 @@
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.1.0",
     "gatsby-transformer-sharp": "^3.1.0",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.9",
     "postcss-loader": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "tailwindcss": "^2.0.4"
   },
   "repository": {
     "type": "git",
