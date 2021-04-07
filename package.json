@@ -25,16 +25,16 @@
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-feed": "^3.2.0",
-    "gatsby-plugin-image": "^1.2.0",
+    "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-offline": "^4.2.0",
     "gatsby-plugin-postcss": "^4.2.0",
-    "gatsby-plugin-sharp": "^3.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-typescript": "^3.2.0",
     "gatsby-remark-images": "^4.2.0",
     "gatsby-remark-images-contentful": "^3.2.0",
     "gatsby-remark-shiki": "^0.2.0",
-    "gatsby-source-contentful": "^5.2.0",
+    "gatsby-source-contentful": "^5.2.1",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@types/tailwindcss": "^2.0.2",
     "prettier": "2.2.1",
     "tailwindcss": "^2.1.1"
   },
