@@ -7,25 +7,25 @@ export default function PostNav({ next, prev }) {
     const nextCover = next == null ? null : getImage( next.cover )
 
     return (
-        <nav className="post_nav">
+        <nav className="flex flex-col sm:flex-row">
             { prev == null ? null :
-                <div className="post_nav_item">
+                <div className="transition transform-gpu hover:scale-105 flex-1 rounded-lg bg-gray-50 m-3 shadow hover:shadow-xl">
                     <Link to={ prev.prefix + prev.slug }>
-                        <GatsbyImage image={ prevCover } alt={ prev.cover.title } imgClassName="post_nav_cover" />
-                        <div className="post_nav_body">
-                            <p className="post_nav_side_prev">前の記事</p>
-                            <p className="post_nav_title">{ prev.title }</p>
+                        <GatsbyImage image={ prevCover } alt={ prev.cover.title } className="rounded-t-lg" imgClassName="rounded-t-lg" />
+                        <div className="p-4">
+                            <p className="text-sm">前の記事</p>
+                            <p>{ prev.title }</p>
                         </div>
                     </Link>
                 </div>
             }
             { next == null ? null : 
-                <div className="post_nav_item">
+                <div className="transition transform-gpu flex-1 rounded-lg bg-gray-50 m-3 shadow hover:shadow-xl hover:scale-105">
                     <Link to={ next.prefix + next.slug }>
-                        <GatsbyImage image={ nextCover } alt={ next.cover.title } imgClassName="post_nav_cover" />
-                        <div className="post_nav_body">
-                            <p className="post_nav_side_next">次の記事</p>
-                            <p className="post_nav_title">{ next.title }</p>
+                        <GatsbyImage image={ nextCover } alt={ next.cover.title } className="rounded-t-lg" imgClassName="rounded-t-lg" />
+                        <div className="p-4">
+                            <p className="text-sm">次の記事</p>
+                            <p>{ next.title }</p>
                         </div>
                     </Link>
                 </div>

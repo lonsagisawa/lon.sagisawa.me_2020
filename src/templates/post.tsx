@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/helmet"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -17,16 +16,14 @@ export default function Post({ pageContext }) {
     return (
         <Layout>
             <Head title={ title + ` :: Lon Sagisawa` } description={ description } />
-            <GatsbyImage image={ coverImg } alt={ coverTitle } className="cover" />
-            <article>
-                <div>
-                    <h1>{ title }</h1>
-                    <p>{ date }</p>
+            <GatsbyImage image={ coverImg } alt={ coverTitle } className="rounded-lg" />
+            <article className="mb-4">
+                <div className="my-4">
+                    <h1 className="font-bold text-4xl font-heading mb-2">{ title }</h1>
+                    <p className="text-sm">{ date }</p>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: body }} />
+                <div dangerouslySetInnerHTML={{ __html: body }} className="post_body" />
             </article>
-            <hr />
-
             <PostNav next={ next } prev={ prev } />
         </Layout>
     )

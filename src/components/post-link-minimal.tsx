@@ -7,9 +7,9 @@ export default function PostLinkMinimal({ post }) {
     const pageLink = `/${post.year}/${post.month}/${post.slug}`
 
     return (
-            <div>
-                { date } - <Link to={ pageLink }>{ title }</Link>
-                <p>{ description }</p>
+            <div className="my-4">
+                { date } - <Link to={ pageLink } className="underline transition hover:text-yellow-500">{ title }</Link>
+                <p className="my-1">{ description }</p>
             </div>
     )
 }

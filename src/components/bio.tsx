@@ -4,15 +4,15 @@ import { StaticImage } from "gatsby-plugin-image"
 
 export default function Bio() {
     return (
-        <footer className="bio">
-            <div className="bio_header">
-                <StaticImage src="../images/logo.png" alt="logo" width={180} height={180} className="bio_img" imgClassName="bio_img" />
-                <div className="bio_side">
-                    <h1 className="bio_title">Lon Sagisawa</h1>
-                    <p className="bio_text">福井県在住の1995年生まれ男性。ゲームしたり写真を撮ったりコードを書いたりして過ごしています。日本国内でお仕事募集中。</p>
-                    <p className="bio_text"><Link to="https://fedibird.com/@ls" rel="me">Mastodon</Link> / <Link to="https://github.com/lonsagisawa">GitHub</Link> / <Link to="https://twitter.com/lsgsw">Twitter</Link> / <Link to="https://twitch.tv/lonsagisawa">Twitch</Link></p>
+        <div className="container mx-auto px-8 max-w-3xl">
+            <footer className="flex flex-col sm:flex-row space-around content-center">
+                <StaticImage src="../images/logo.png" alt="logo" width={180} height={180} className="rounded-full mx-auto sm:mx-0" imgClassName="rounded-full" />
+                <div className="max-w-md mx-auto my-4 sm:my-auto py-auto text-center sm:text-left">
+                    <h1 className="text-3xl font-heading font-bold mb-2">Lon Sagisawa</h1>
+                    <p className="my-2">福井県在住の1995年生まれ男性。ゲームしたり写真を撮ったりコードを書いたりして過ごしています。日本国内でお仕事募集中。</p>
+                    <p><Link to="https://fedibird.com/@ls" rel="me" className="underline">Mastodon</Link> / <Link to="https://github.com/lonsagisawa" className="underline">GitHub</Link> / <Link to="https://twitter.com/lsgsw" className="underline">Twitter</Link> / <Link to="https://twitch.tv/lonsagisawa" className="underline">Twitch</Link></p>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
     )
 }

@@ -10,9 +10,13 @@ import "@fontsource/fira-code"
 const Layout = ({ children }) => {
     return (
         <div>
-            <Header />
-            <main>{children}</main>
-            <Bio />
+            <div className="container mx-auto px-4 max-w-3xl">
+                <Header />
+                <main>{children}</main>
+            </div>
+            <div className="bg-gray-800 text-gray-300 mt-6 py-12">
+                <Bio />
+            </div>
         </div>
     )
 }
