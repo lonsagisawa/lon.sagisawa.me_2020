@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export default function Bio() {
     return (
         <div className="container mx-auto px-8 max-w-3xl">
-            <footer className="flex flex-col sm:flex-row space-around content-center">
+            <footer className="flex flex-col sm:flex-row content-around">
                 <StaticImage src="../images/logo.png" alt="logo" width={180} height={180} className="rounded-full mx-auto sm:mx-0" imgClassName="rounded-full" />
                 <div className="max-w-md mx-auto my-4 sm:my-auto py-auto text-center sm:text-left">
                     <h1 className="text-3xl font-heading font-bold mb-2">Lon Sagisawa</h1>

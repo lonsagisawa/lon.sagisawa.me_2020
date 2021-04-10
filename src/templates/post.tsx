@@ -16,11 +16,11 @@ export default function Post({ pageContext }) {
     return (
         <Layout>
             <Head title={ title + ` :: Lon Sagisawa` } description={ description } />
-            <GatsbyImage image={ coverImg } alt={ coverTitle } className="rounded-lg" />
-            <article className="mb-4">
-                <div className="my-4">
-                    <h1 className="font-bold text-4xl font-heading mb-2">{ title }</h1>
-                    <p className="text-sm">{ date }</p>
+            <GatsbyImage image={ coverImg } alt={ coverTitle } loading="eager" className="rounded-lg" imgClassName="rounded-lg" />
+            <article className="mb-4 mx-auto max-w-3xl">
+                <div className="my-4 sm:my-8">
+                    <h1 className="mb-2">{ title }</h1>
+                    <p className="my-0 text-sm">{ date }</p>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: body }} className="post_body" />
             </article>

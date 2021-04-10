@@ -11,7 +11,7 @@ export default function Home({ data }) {
       {data.allContentfulPost.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node} />
       )}
-      <Link to="/archive" className="block transition transform-gpu min-w-full rounded-lg my-4 bg-gray-50 py-4 text-center shadow hover:shadow-xl hover:scale-105">すべての記事を見る</Link>
+      <Link to="/archive" className="block transition min-w-full rounded-lg my-4 bg-gray-50 py-4 text-center shadow hover:shadow-lg">すべての記事を見る</Link>
   </Layout>
   )
 }
