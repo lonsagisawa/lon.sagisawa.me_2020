@@ -59,6 +59,9 @@ module.exports = {
               backgroundColor: `#eceff4`,
             },
           },
+          {
+            resolve: `gatsby-remark-external-links`
+          },
         ],
       },
     },
