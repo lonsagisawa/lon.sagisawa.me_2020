@@ -1,7 +1,7 @@
 {
     "headers": [
         {
-            "source": "(.*)/*",
+            "source": "/(.*)",
             "headers": [
             {
                 "key": "x-content-type-options",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "source": "(.*)/*.@(css|js)",
+            "source": "/*.@(css|js)",
             "headers": [
             {
                 "key": "cache-control",
