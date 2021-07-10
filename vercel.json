@@ -3,23 +3,26 @@
         {
             "source": "/(.*)",
             "headers": [
-            {
-                "key": "x-content-type-options",
-                "value": "nosniff"
-            },
-            {
-                "key": "x-frame-options",
-                "value": "DENY"
-            }
-            ]
-        },
-        {
-            "source": "/*.@(css|js)",
-            "headers": [
-            {
-                "key": "cache-control",
-                "value": "public, max-age=31536000, immutable"
-            }
+                {
+                    "key": "x-content-type-options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "x-frame-options",
+                    "value": "DENY"
+                },
+                {
+                    "key" : "X-XSS-Protection",
+                    "value" : "1; mode=block"
+                },
+                {
+                    "key" : "Referrer-Policy",
+                    "value" : "strict-origin"
+                },
+                {
+                    "key" : "Permissions-Policy",
+                    "value" : "geolocation=(self), microphone=()"
+                }
             ]
         }
     ]
