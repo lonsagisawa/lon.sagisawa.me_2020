@@ -92,4 +92,9 @@ exports.onPostBuild = () => {
             throw err;
         }
     });
+    fs.copyFile(`./vercel.json`, `./public/vercel.json`, (err) => {
+        if (err) {
+            throw err;
+        }
+    });
 };
