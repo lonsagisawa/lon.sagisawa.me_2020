@@ -73,6 +73,7 @@
     
     article ul {
         @apply list-disc;
+        @apply ml-4;
     }
     
     article li ul {
@@ -100,7 +101,12 @@
     article tbody tr {
         @apply border-b;
         @apply border-gray-200;
-    }    
+    }
+
+    .logo {
+        font-family: Oxanium;
+        font-weight: 800;
+    }
 }
 
 

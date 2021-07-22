@@ -10,9 +10,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ['Inter', '"Hiragino Sans"', '"BIZ UDPGothic"', 'Meiryo', 'sans-serif'],
-      'heading': ['Montserrat', '"Hiragino Sans"', '"BIZ UDPGothic"', 'Meiryo', 'sans-serif'],
-      'mono': ['Fira Code', 'monospace'],
+      'sans': ['Rubik', 'Noto Sans JP', 'sans-serif'],
+      'heading': ['Rubik', 'Noto Sans JP', 'sans-serif'],
+      'mono': ['JetBrains Mono', 'monospace'],
     },
     colors: {
       transparent: 'transparent',

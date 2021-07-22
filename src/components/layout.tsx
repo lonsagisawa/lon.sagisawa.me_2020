@@ -2,10 +2,12 @@ import React from "react"
 import Header from "./header"
 import Bio from "./bio"
 import "../css/style.css"
-import "@fontsource/inter/400.css"
-import "@fontsource/inter/700.css"
-import "@fontsource/montserrat/700.css"
-import "@fontsource/fira-code"
+import "@fontsource/rubik/400.css"
+import "@fontsource/rubik/700.css"
+import "@fontsource/noto-sans-jp/400.css"
+import "@fontsource/noto-sans-jp/700.css"
+import "@fontsource/oxanium/800.css"
+import "@fontsource/jetbrains-mono"
 
 const Layout = ({ children }) => {
     return (
