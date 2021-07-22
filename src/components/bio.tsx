@@ -10,7 +10,8 @@ export default function Bio() {
                 <div className="max-w-md mx-auto my-4 sm:my-auto py-auto text-center sm:text-left">
                     <h1 className="text-3xl font-heading font-bold mb-2">Lon Sagisawa</h1>
                     <p className="my-2">福井県在住の1995年生まれ男性。ゲームしたり写真を撮ったりコードを書いたりして過ごしています。日本国内でお仕事募集中。</p>
-                    <p><Link to="https://fedibird.com/@ls" rel="me" className="underline">Mastodon</Link> / <Link to="https://github.com/lonsagisawa" className="underline">GitHub</Link> / <Link to="https://twitter.com/lsgsw" className="underline">Twitter</Link> / <Link to="https://twitch.tv/lonsagisawa" className="underline">Twitch</Link></p>
+                    <p>GitHub <Link to="https://github.com/lonsagisawa" className="underline">https://github.com/lonsagisawa</Link><br/>
+                    Discord Lon_Sagisawa#5466</p>
                 </div>
             </footer>
         </div>
