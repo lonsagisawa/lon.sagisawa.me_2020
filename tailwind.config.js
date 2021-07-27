@@ -10,8 +10,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ['Rubik', 'Noto Sans JP', 'sans-serif'],
-      'heading': ['Rubik', 'Noto Sans JP', 'sans-serif'],
+      'sans': ['Rubik', 'IBM Plex Sans JP', 'sans-serif'],
+      'heading': ['Rubik', 'IBM Plex Sans JP', 'sans-serif'],
       'mono': ['JetBrains Mono', 'monospace'],
     },
     colors: {

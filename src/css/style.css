@@ -7,7 +7,9 @@
         font-feature-settings: "palt";
         @apply bg-gray-100;
         @apply text-gray-700;
+        @apply font-medium;
     }
+
     article {
         @apply font-sans;
         @apply leading-relaxed;

@@ -4,10 +4,9 @@ import Bio from "./bio"
 import "../css/style.css"
 import "@fontsource/rubik/400.css"
 import "@fontsource/rubik/700.css"
-import "@fontsource/noto-sans-jp/400.css"
-import "@fontsource/noto-sans-jp/700.css"
 import "@fontsource/oxanium/800.css"
 import "@fontsource/jetbrains-mono"
+import "@ibm/plex/css/ibm-plex-sans-jp.min.css"
 
 const Layout = ({ children }) => {
     return (
