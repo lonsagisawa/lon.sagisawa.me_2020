@@ -1836,13 +1836,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ibm/plex@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "@ibm/plex@npm:5.2.1"
-  checksum: c7ffb979f1a9d2d6fa98da174ab35923be3aaf3129112b33b425f9d21c4fb87f4bd6cc4434d77b6c58d1f980f17deddda7f69f5ad08d1646c8614e59abb81415
-  languageName: node
-  linkType: hard
-
 "@jest/types@npm:^25.5.0":
   version: 25.5.0
   resolution: "@jest/types@npm:25.5.0"
@@ -8462,7 +8455,6 @@ fsevents@~2.3.2:
     "@fontsource/jetbrains-mono": ^4.5.0
     "@fontsource/oxanium": ^4.5.0
     "@fontsource/rubik": ^4.5.0
-    "@ibm/plex": ^5.2.1
     "@types/node": ^16.4.7
     "@types/react": ^17.0.15
     "@types/react-dom": ^17.0.9
