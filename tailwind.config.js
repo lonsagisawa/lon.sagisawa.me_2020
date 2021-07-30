@@ -10,8 +10,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'sans': ['Rubik', 'IBM Plex Sans JP', 'sans-serif'],
-      'heading': ['Rubik', 'IBM Plex Sans JP', 'sans-serif'],
+      'sans': ['Rubik', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', 'sans-serif'],
+      'heading': ['Rubik', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', 'sans-serif'],
       'mono': ['JetBrains Mono', 'monospace'],
     },
     colors: {
@@ -19,7 +19,7 @@ module.exports = {
       current: 'currentColor',
       gray: colors.coolGray,
       red: colors.red,
-      blue: colors.lightBlue,
+      blue: colors.sky,
       yellow: colors.amber,
     },
     extend: {
