@@ -57,6 +57,7 @@ module.exports = {
               withWebp: true,
               loading: `lazy`,
               backgroundColor: `#eceff4`,
+              linkImagesToOriginal: true
             },
           },
           {
