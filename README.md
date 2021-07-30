@@ -22,8 +22,9 @@ CONTENTFUL_HOST="cdn.contentful.com"
 ```
 
 ```shell
-yarn global add gatsby-cli
-yarn
+npm i -g yarn gatsby-cli
+yarn set version berry
+yarn install
 gatsby develop
 ```
 
