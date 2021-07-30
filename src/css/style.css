@@ -6,8 +6,7 @@
     body {
         font-feature-settings: "palt";
         @apply bg-gray-100;
-        @apply text-gray-700;
-        @apply font-medium;
+        @apply text-gray-800;
     }
 
     article {
