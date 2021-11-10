@@ -87,11 +87,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 }
 
 exports.onPostBuild = () => {
-    fs.copyFile(`./firebase.json`, `./public/firebase.json`, (err) => {
-        if (err) {
-            throw err;
-        }
-    });
     fs.copyFile(`./vercel.json`, `./public/vercel.json`, (err) => {
         if (err) {
             throw err;
