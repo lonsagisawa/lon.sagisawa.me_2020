@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 edges {
                     node {
                         title
+                        id
                         date(locale: "ja-JP", formatString: "YYYY年MM月DD日")
                         year: date(formatString: "YYYY")
                         month: date(formatString: "MM")
@@ -81,6 +82,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             // permalink
             path: `/${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
             component: path.resolve("./src/templates/post.tsx"),
+            ownerNodeId: `${edge.node.id}`,
             context: { post: edge.node, next: edge.next, prev: edge.previous }
         })
     });
