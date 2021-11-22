@@ -83,7 +83,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             path: `/${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
             component: path.resolve("./src/templates/post.tsx"),
             ownerNodeId: `${edge.node.id}`,
-            context: { post: edge.node, next: edge.next, prev: edge.previous }
+            context: {
+                post: edge.node,
+                id: edge.node.id,
+                next: edge.next,
+                prev: edge.previous
+            },
         })
     });
 }
