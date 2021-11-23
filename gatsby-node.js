@@ -10,34 +10,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             allContentfulPost(sort: {fields: date, order: ASC}) {
                 edges {
                     node {
-                        title
                         id
-                        date(locale: "ja-JP", formatString: "YYYY年MM月DD日")
                         year: date(formatString: "YYYY")
                         month: date(formatString: "MM")
-                        cover {
-                            gatsbyImageData(
-                                layout: FULL_WIDTH,
-                                quality: 90,
-                                placeholder: NONE,
-                                backgroundColor: "#434c5e"
-                            )
-                            title
-                        }
-                        description {
-                            description
-                        }
                         slug
-                        body {
-                            childMarkdownRemark {
-                                html
-                            }
-                        }
                     }
                     next {
                         title
                         prefix: date(formatString: "/YYYY/MM/")
                         slug
+                        id
                         cover {
                             gatsbyImageData(
                                 width: 360,
@@ -53,6 +35,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         title
                         prefix: date(formatString: "/YYYY/MM/")
                         slug
+                        id
                         cover {
                             gatsbyImageData(
                                 width: 360,
@@ -84,7 +67,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: path.resolve("./src/templates/post.tsx"),
             ownerNodeId: `${edge.node.id}`,
             context: {
-                post: edge.node,
                 id: edge.node.id,
                 next: edge.next,
                 prev: edge.previous
