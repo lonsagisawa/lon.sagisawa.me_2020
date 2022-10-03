@@ -20,7 +20,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-source-filesystem`,
