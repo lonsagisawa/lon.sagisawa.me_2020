@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "./header"
 import Bio from "./bio"
-import { setup } from 'twind'
+import { setup, tw } from 'twind'
 import * as colors from 'twind/colors'
 import "@fontsource/inter/variable.css"
 import "@fontsource/jetbrains-mono"
@@ -10,7 +10,8 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Header />
-            <main>{children}</main>
+            <main className={tw`container mx-auto`}>{children}</main>
+            <Bio />
         </div>
     )
 }
