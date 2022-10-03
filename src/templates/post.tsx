@@ -13,13 +13,13 @@ export default function Post({ data, pageContext }) {
     return (
         <Layout>
             <Head title={ post.title + ` :: Lon Sagisawa` } description={ post.description } />
-            <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" className="rounded-lg" imgClassName="rounded-lg" />
-            <article className="mb-4 mx-auto max-w-3xl">
-                <div className="my-4 sm:my-8">
-                    <h1 className="mb-2">{ post.title }</h1>
-                    <p className="my-0 text-sm">{ post.date }</p>
+            <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" className="" imgClassName="" />
+            <article>
+                <div>
+                    <h1>{ post.title }</h1>
+                    <p>{ post.date }</p>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: body }} className="post_body" />
+                <div dangerouslySetInnerHTML={{ __html: body }} />
             </article>
             <PostNav next={ pageContext.next } prev={ pageContext.prev } />
         </Layout>
