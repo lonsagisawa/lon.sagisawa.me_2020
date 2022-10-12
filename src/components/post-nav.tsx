@@ -15,7 +15,6 @@ export default function PostNav({ next, prev }) {
                             <GatsbyImage image={ prevCover } alt={ prev.cover.title } className={tw`rounded col-span-1 hidden sm:block`} imgClassName={tw`rounded`} />
                             <div className={tw`col-span-4`}>
                                 <p className={tw`text(sm gray-600 dark:gray-400) font-bold`}>前の記事</p>
-                                <p>{ prev.date }</p>
                                 <p>{ prev.title }</p>
                             </div>
                         </div>
