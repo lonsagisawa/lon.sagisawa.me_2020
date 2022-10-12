@@ -1,5 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { tw } from 'twind'
 
 const Head = ({ title, description }) => {
     return (
@@ -33,7 +34,9 @@ const Head = ({ title, description }) => {
                     content: `ja_JP`,
                 },
             ]}
-        />
+        >
+            <body className={tw`text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900`} />
+        </Helmet>
     )
 }
 

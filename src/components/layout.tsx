@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Header />
-            <main className={tw`container mx-auto`}>{children}</main>
+            <main className={tw`px-4 mx-auto max-w-4xl mb-8`}>{children}</main>
             <Bio />
         </div>
     )
@@ -20,6 +20,7 @@ setup({
     theme: {
         fontFamily: {
             sans: ['InterVariable', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
         },
         extend: {
             colors,

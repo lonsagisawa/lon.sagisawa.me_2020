@@ -26,7 +26,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 layout: FULL_WIDTH,
                                 quality: 90,
                                 placeholder: NONE,
-                                backgroundColor: "#434c5e",
                                 aspectRatio: 2.5
                             )
                         }
@@ -42,7 +41,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 layout: FULL_WIDTH,
                                 quality: 90,
                                 placeholder: NONE,
-                                backgroundColor: "#434c5e",
                                 aspectRatio: 2.5
                             )
                         }

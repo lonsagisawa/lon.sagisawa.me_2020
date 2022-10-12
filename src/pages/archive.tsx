@@ -8,12 +8,9 @@ export default function Archive({ data }) {
     return (
     <Layout>
         <Head title="Lon Sagisawa" description="Private website of Lon Sagisawa" />
-        <h1 className="text-2xl sm:text-3xl mb-2 sm:mb-4">すべての記事</h1>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {data.allContentfulPost.edges.map(edge =>
-            <PostLinkMinimal key={edge.node.slug} post={edge.node} />
-          )}
-        </div>
+        {data.allContentfulPost.edges.map(edge =>
+          <PostLinkMinimal key={edge.node.slug} post={edge.node} />
+        )}
     </Layout>
     )
 }
