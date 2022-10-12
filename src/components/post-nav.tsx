@@ -1,34 +1,35 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { tw } from "twind"
 
 export default function PostNav({ next, prev }) {
     const prevCover = prev == null ? null : getImage( prev.cover )
     const nextCover = next == null ? null : getImage( next.cover )
 
     return (
-        <nav className="flex flex-col sm:flex-row justify-center">
+        <nav>
             { prev == null ? null :
-                <div className="transition flex-1 rounded-lg bg-gray-50 sm:max-w-sm my-2 sm:mx-2 shadow hover:shadow-lg hover:bg-gray-100">
-                    <Link to={ prev.prefix + prev.slug } className="block min-h-full">
-                        <GatsbyImage image={ prevCover } alt={ prev.cover.title } className="rounded-t-lg" imgClassName="rounded-t-lg" />
-                        <div className="p-4">
-                            <p className="text-sm">前の記事</p>
-                            <p>{ prev.title }</p>
+                    <Link to={ prev.prefix + prev.slug }>
+                        <div className={tw`sm:(grid grid-cols-5 gap-4) p-4 border(y-1 gray-200 dark:gray-700) transition hover:(bg-white dark:bg-black)`}>
+                            <GatsbyImage image={ prevCover } alt={ prev.cover.title } className={tw`rounded col-span-1 hidden sm:block`} imgClassName={tw`rounded`} />
+                            <div className={tw`col-span-4`}>
+                                <p className={tw`text(sm gray-600 dark:gray-400) font-bold`}>前の記事</p>
+                                <p>{ prev.title }</p>
+                            </div>
                         </div>
                     </Link>
-                </div>
             }
             { next == null ? null : 
-                <div className="transition flex-1 rounded-lg bg-gray-50 sm:max-w-sm my-2 sm:m-2 shadow hover:shadow-lg hover:bg-gray-100">
-                    <Link to={ next.prefix + next.slug } className="block min-h-full">
-                        <GatsbyImage image={ nextCover } alt={ next.cover.title } className="rounded-t-lg" imgClassName="rounded-t-lg" />
-                        <div className="p-4">
-                            <p className="text-sm">次の記事</p>
-                            <p>{ next.title }</p>
+                    <Link to={ next.prefix + next.slug }>
+                        <div className={tw`sm:(grid grid-cols-5 gap-4) p-4 border(y-1 gray-200 dark:gray-700) transition hover:(bg-white dark:bg-black)`}>
+                            <GatsbyImage image={ nextCover } alt={ next.cover.title } className={tw`rounded col-span-1 hidden sm:block`} imgClassName={tw`rounded`} />
+                            <div className={tw`col-span-4`}>
+                                <p className={tw`text(sm gray-600 dark:gray-400) font-bold`}>次の記事</p>
+                                <p>{ next.title }</p>
+                            </div>
                         </div>
                     </Link>
-                </div>
             }
         </nav>
     )

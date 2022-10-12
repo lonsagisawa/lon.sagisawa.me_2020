@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import { Link, graphql } from "gatsby"
 import Head from "../components/helmet"
+import { tw } from "twind"
 
 export default function Home({ data }) {
   return (
@@ -11,7 +12,7 @@ export default function Home({ data }) {
       {data.allContentfulPost.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node} />
       )}
-      <Link to="/archive" className="block transition min-w-full rounded-lg my-4 bg-gray-50 py-4 text-center shadow hover:shadow-lg">すべての記事を見る</Link>
+      <Link to="/archive" className={tw`block text(xl center) font-bold border-2 border-amber-500 text-amber-500 rounded p-2 my-2 hover:(bg-amber-500 text-gray-100 border-transparent) transition-colors`}>すべての記事を見る</Link>
   </Layout>
   )
 }

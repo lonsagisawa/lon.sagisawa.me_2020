@@ -20,7 +20,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -45,16 +44,16 @@ module.exports = {
           {
             resolve: `gatsby-remark-shiki`,
             options: {
-              theme: `nord`,
+              theme: `material-default`,
             },
           },
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
-              maxWidth: 750,
+              maxWidth: 768,
               withWebp: true,
               loading: `lazy`,
-              backgroundColor: `#eceff4`,
+              backgroundColor: `#6b7280`,
               linkImagesToOriginal: true
             },
           },
