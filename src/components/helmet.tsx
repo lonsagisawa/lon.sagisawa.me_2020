@@ -11,7 +11,7 @@ const Helmet = ({ title, description, pathname, children }: HeadProps) => {
     } = useSiteMetadata()
 
     const helm = {
-        title: title + " | " + defaultTitle || defaultTitle,
+        title: title || defaultTitle,
         description: description || defaultDescription,
         url: `${siteUrl}${pathname || ``}`,
         twitterUsername,

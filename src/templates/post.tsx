@@ -45,7 +45,7 @@ export default function Post({ data, pageContext }) {
 }
 
 export const Head = ({ data }) => (
-    <Helmet title={ data.post.title } description={ data.post.description.description } />
+    <Helmet title={ data.post.title + " | Lon Sagisawa" } description={ data.post.description.description } />
 )
 
 export const query = graphql`
