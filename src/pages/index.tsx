@@ -2,13 +2,12 @@ import * as React from "react"
 import { graphql, PageProps, Link } from "gatsby"
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-import Head from "../components/helmet"
+import Helmet from "../components/helmet"
 import { tw } from "twind"
 
 const Home = ({ data }: PageProps) => {
   return (
   <Layout>
-      <Head title="Lon Sagisawa" description="Private website of Lon Sagisawa" />
       { data.allContentfulPost.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node} />
       ) }
@@ -18,6 +17,10 @@ const Home = ({ data }: PageProps) => {
 }
 
 export default Home
+
+export const Head = () => (
+  <Helmet />
+)
 
 export const query = graphql`
   query Home {

@@ -16,7 +16,8 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Lon Sagisawa`,
     description: `private blog of Lon Sagisawa`,
-    siteUrl: `https://lon.sagisawa.me`
+    siteUrl: `https://lon.sagisawa.me`,
+    twitterUsername: `@lsgsw`
   },
   graphqlTypegen: true,
   plugins: [
