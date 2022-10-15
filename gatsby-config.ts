@@ -152,8 +152,9 @@ const config: GatsbyConfig = {
             title: "Lon Sagisawa :: RSS feed",
           }
         ]
-      }
+      },
     },
+    `gatsby-plugin-emotion`,
   ],
 }
 
