@@ -1,3 +1,5 @@
+import type { GatsbyNode } from "gatsby"
+
 const path = require("path")
 const fs = require("fs")
 
