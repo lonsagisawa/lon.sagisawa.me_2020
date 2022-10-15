@@ -1,3 +1,5 @@
+import type { GatsbyConfig } from "gatsby"
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -10,12 +12,13 @@ require('dotenv').config({
 
 const path = require(`path`)
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Lon Sagisawa`,
     description: `private blog of Lon Sagisawa`,
     siteUrl: `https://lon.sagisawa.me`
   },
+  graphqlTypegen: true,
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -152,3 +155,5 @@ module.exports = {
     },
   ],
 }
+
+export default config

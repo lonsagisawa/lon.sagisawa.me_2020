@@ -1,8 +1,8 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { tw } from "twind"
 
-export default function Header() {
+const Header = () => {
     return (
         <header className={tw`max-w-4xl mx-auto py-10 px-4 sm:py-20`}>
             <h1>
@@ -11,3 +11,5 @@ export default function Header() {
         </header>
     )
 }
+
+export default Header
