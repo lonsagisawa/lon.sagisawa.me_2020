@@ -1,10 +1,10 @@
-import React from "react"
+import * as React from "react"
 import Layout from "../components/layout"
 import Head from "../components/helmet"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import PostLinkMinimal from "../components/post-link-minimal"
 
-export default function Archive({ data }) {
+const Archive = ({ data }: PageProps) => {
     return (
     <Layout>
         <Head title="Lon Sagisawa" description="Private website of Lon Sagisawa" />
@@ -15,30 +15,32 @@ export default function Archive({ data }) {
     )
 }
 
+export default Archive
+
 export const query = graphql`
-{
-  allContentfulPost(sort: {fields: date, order: DESC}) {
-    edges {
-      node {
-        title
-        date(locale: "ja-JP", formatString: "YYYY年MM月DD日")
-        year: date(formatString: "YYYY")
-        month: date(formatString: "MM")
-        cover {
-          gatsbyImageData(
-            layout: FULL_WIDTH,
-            quality: 90,
-            placeholder: NONE,
-            backgroundColor: "#434c5e"
-          )
+  query Archive{
+    allContentfulPost(sort: {fields: date, order: DESC}) {
+      edges {
+        node {
           title
+          date(locale: "ja-JP", formatString: "YYYY年MM月DD日")
+          year: date(formatString: "YYYY")
+          month: date(formatString: "MM")
+          cover {
+            gatsbyImageData(
+              layout: FULL_WIDTH,
+              quality: 90,
+              placeholder: NONE,
+              backgroundColor: "#434c5e"
+            )
+            title
+          }
+          description {
+            description
+          }
+          slug
         }
-        description {
-          description
-        }
-        slug
       }
     }
   }
-}
 `
