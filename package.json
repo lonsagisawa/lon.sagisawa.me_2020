@@ -21,7 +21,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@types/react-helmet": "^6.1.5",
     "dotenv": "^16.0.3",
     "gatsby": "^4.24.4",
     "gatsby-image": "^3.11.0",
@@ -42,7 +41,6 @@
     "gatsby-transformer-sharp": "^4.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "twind": "^0.16.17"
   },
   "devDependencies": {

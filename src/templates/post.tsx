@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Head from "../components/helmet"
+import Helmet from "../components/helmet"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PostNav from "../components/post-nav"
 import { tw } from "twind"
@@ -31,7 +31,6 @@ export default function Post({ data, pageContext }) {
 
     return (
         <Layout>
-            <Head title={ post.title + ` :: Lon Sagisawa` } description={ post.description } />
             <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" className={tw`rounded`} imgClassName={tw`rounded`} />
             <article className={tw`mb-8`}>
                 <div className={tw`my-4`}>
@@ -44,6 +43,10 @@ export default function Post({ data, pageContext }) {
         </Layout>
     )
 }
+
+export const Head = ({ data }) => (
+    <Helmet title={ data.post.title + " | Lon Sagisawa" } description={ data.post.description.description } />
+)
 
 export const query = graphql`
     query ($id: String!){

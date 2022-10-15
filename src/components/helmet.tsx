@@ -1,43 +1,33 @@
 import * as React from "react"
-import { Helmet } from "react-helmet"
-import { tw } from 'twind'
+import type { HeadProps } from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const Head = ({ title, description }) => {
+const Helmet = ({ title, description, pathname, children }: HeadProps) => {
+    const {
+        title: defaultTitle,
+        description: defaultDescription,
+        siteUrl,
+        twitterUsername
+    } = useSiteMetadata()
+
+    const helm = {
+        title: title || defaultTitle,
+        description: description || defaultDescription,
+        url: `${siteUrl}${pathname || ``}`,
+        twitterUsername,
+    }
+
     return (
-        <Helmet
-            htmlAttributes = {{ lang: "ja-JP" }}
-            title = { title }
-            titleTemplate = { `%s` }
-            meta = {[
-                {
-                    name: `description`,
-                    content: description,
-                },
-                {
-                    property: `og:title`,
-                    content: title,
-                },
-                {
-                    property: `og:description`,
-                    content: description,
-                },
-                {
-                    property: `og:type`,
-                    content: `website`,
-                },
-                {
-                    property: `og:site_name`,
-                    content: `Lon Sagisawa`
-                },
-                {
-                    property: `og:locale`,
-                    content: `ja_JP`,
-                },
-            ]}
-        >
-            <body className={tw`text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900`} />
-        </Helmet>
+        <>
+            <title>{ helm.title }</title>
+            <meta name="description" content={ helm.description } />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter.title" content={ helm.title } />
+            <meta name="twitter.url" content={ helm.url } />
+            <meta name="twitter.description" content={ helm.description } />
+            <meta name="twitter:creator" content={ helm.twitterUsername } />
+            { children }
+        </>
     )
 }
-
-export default Head
+export default Helmet

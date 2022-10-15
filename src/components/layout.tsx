@@ -8,7 +8,7 @@ import "@fontsource/jetbrains-mono"
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <div className={tw`text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900`}>
             <Header />
             <main className={tw`px-4 mx-auto max-w-4xl mb-8`}>{children}</main>
             <Bio />

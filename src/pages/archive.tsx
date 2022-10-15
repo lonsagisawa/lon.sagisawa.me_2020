@@ -1,13 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import Head from "../components/helmet"
+import Helmet from "../components/helmet"
 import { graphql, PageProps } from "gatsby"
 import PostLinkMinimal from "../components/post-link-minimal"
 
 const Archive = ({ data }: PageProps) => {
     return (
     <Layout>
-        <Head title="Lon Sagisawa" description="Private website of Lon Sagisawa" />
         {data.allContentfulPost.edges.map(edge =>
           <PostLinkMinimal key={edge.node.slug} post={edge.node} />
         )}
@@ -16,6 +15,10 @@ const Archive = ({ data }: PageProps) => {
 }
 
 export default Archive
+
+export const Head = () => (
+  <Helmet />
+)
 
 export const query = graphql`
   query Archive{

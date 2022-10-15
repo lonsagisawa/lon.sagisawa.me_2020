@@ -1,12 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Head from "../components/helmet"
+import Helmet from "../components/helmet"
 
 const NotFound = () => {
   return (
     <Layout>
-        <Head title="404 Not Found" description="ページが見つかりません" />
         <h1>404 Not Found</h1>
         <Link to="/">トップページにもどる</Link>
     </Layout>
@@ -14,3 +13,7 @@ const NotFound = () => {
 }
 
 export default NotFound
+
+export const Head = () => (
+  <Helmet title="404 Not Found" description="ページが見つかりません" />
+)
