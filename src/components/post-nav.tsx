@@ -1,9 +1,9 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { tw } from "twind"
 
-export default function PostNav({ next, prev }) {
+const PostNav = ({ next, prev }) => {
     const prevCover = prev == null ? null : getImage( prev.cover )
     const nextCover = next == null ? null : getImage( next.cover )
 
@@ -34,3 +34,5 @@ export default function PostNav({ next, prev }) {
         </nav>
     )
 }
+
+export default PostNav

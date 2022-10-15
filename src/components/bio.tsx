@@ -1,4 +1,5 @@
-import React from "react"
+import * as React from "react"
+import type { PageProps } from "gatsby"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -6,7 +7,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { tw } from "twind"
 import { apply, css } from "twind/css"
 
-export default function Bio() {
+const Bio = () => {
     const bioStyle = css( apply`my-auto`, {
         a: apply`underline hover:text-gray-200 transition`,
     })
@@ -26,3 +27,5 @@ export default function Bio() {
         </footer>
     )
 }
+
+export default Bio

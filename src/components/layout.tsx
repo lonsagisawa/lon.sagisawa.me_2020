@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import Header from "./header"
 import Bio from "./bio"
 import { setup, tw } from 'twind'

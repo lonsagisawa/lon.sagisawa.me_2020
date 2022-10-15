@@ -1,9 +1,9 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { tw } from "twind"
 
-export default function PostLink({ post }) {
+const PostLink = ({ post }) => {
     const { title, date } = post;
     const description = post.description.description;
     const coverImg = getImage(post.cover);
@@ -26,3 +26,5 @@ export default function PostLink({ post }) {
         </div>
     )
 }
+
+export default PostLink

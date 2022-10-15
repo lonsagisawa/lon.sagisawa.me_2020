@@ -1,9 +1,9 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { tw } from "twind"
 
-export default function PostLinkMinimal({ post }) {
+const PostLinkMinimal = ({ post }) => {
     const { title, date } = post;
     const description = post.description.description;
     const pageLink = `/${post.year}/${post.month}/${post.slug}`
@@ -21,3 +21,5 @@ export default function PostLinkMinimal({ post }) {
         </div>
     )
 }
+
+export default PostLinkMinimal

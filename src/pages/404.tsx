@@ -1,9 +1,9 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/helmet"
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <Layout>
         <Head title="404 Not Found" description="ページが見つかりません" />
@@ -12,3 +12,5 @@ export default function NotFound() {
     </Layout>
   )
 }
+
+export default NotFound
