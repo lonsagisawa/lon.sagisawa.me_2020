@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -152,7 +153,7 @@ const config: GatsbyConfig = {
             title: "Lon Sagisawa :: RSS feed",
           }
         ]
-      }
+      },
     },
   ],
 }

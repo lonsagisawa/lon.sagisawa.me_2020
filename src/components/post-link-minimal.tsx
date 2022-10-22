@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { tw } from "twind"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
 const PostLinkMinimal = ({ post }) => {
     const { title, date } = post;
@@ -10,15 +11,66 @@ const PostLinkMinimal = ({ post }) => {
     const coverImg = getImage(post.cover);
     const coverTitle = post.cover.title;
 
+    const Container = styled.div({
+        display: 'grid',
+        gridTemplateColumns: 'repeat(1, 1fr)',
+        '@media screen and (min-width: 768px)': {
+            gridTemplateColumns: 'repeat(5, 1fr)',
+        },
+        gap: '1rem',
+        margin: '1rem 0',
+    })
+
+    const CoverImg = css({
+        borderRadius: '0.5rem',
+        display: 'none',
+        '@media screen and (min-width: 768px)': {
+            display: 'block',
+            gridColumn: 'span 2 / span 2',
+        }
+    })
+
+    const PostInfo = styled.div({
+        '@media screen and (min-width: 768px)': {
+            gridColumn: 'span 3 / span 3',
+        }
+    })
+
+    const PostDesc = styled.p({
+        fontSize: '0.85rem',
+        display: 'none',
+        '@media screen and (min-width: 768px)': {
+            display: 'inline',
+        }
+    })
+
+    const PostLink = css({
+        fontSize: '1.25rem',
+        fontWeight: 700,
+        textDecoration: 'underline',
+        color: 'inherit',
+        ':hover': {
+            color: '#80a3b0',
+            transition: 'all 100ms ease-out',
+        }
+    })
+
+    const PostDate = styled.p({
+        fontSize: '0.85rem',
+        fontWeight: 700,
+        opacity: 0.75,
+        margin: '0.1rem 0',
+    })
+
     return (
-        <div className={tw`grid grid(cols-1 md:cols-5) gap-4 my-4`}>
-            <GatsbyImage image={ coverImg } alt={ coverTitle } className={tw`rounded hidden md:block md:col-span-2`} imgClassName="" />
-            <div className={ tw`md:col-span-3` }>
-                <Link to={ pageLink } className={ tw`text-xl font-bold border(b-1 gray-500) transition hover:(text-transparent border-amber-400) bg(clip-text gradient-to-r) from-amber-400 to-orange-500` }>{ title }</Link>
-                <p className={ tw`text-xs sm:font-bold my-1 opacity-70` }>{ date }</p>
-                <p className={ tw`text-sm hidden md:inline` }>{ description }</p>
-            </div>
-        </div>
+        <Container>
+            <GatsbyImage image={ coverImg } alt={ coverTitle } css={ CoverImg } />
+            <PostInfo>
+                <Link to={ pageLink } css={ PostLink } >{ title }</Link>
+                <PostDate>{ date }</PostDate>
+                <PostDesc>{ description }</PostDesc>
+            </PostInfo>
+        </Container>
     )
 }
 

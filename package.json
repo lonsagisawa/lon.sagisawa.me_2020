@@ -15,6 +15,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@fontsource/inter": "^4.5.13",
     "@fontsource/jetbrains-mono": "^4.5.11",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -22,8 +24,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "dotenv": "^16.0.3",
+    "emotion-sanitize": "^12.0.2",
     "gatsby": "^4.24.4",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-emotion": "^7.24.0",
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-gatsby-cloud": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
@@ -40,8 +44,7 @@
     "gatsby-transformer-remark": "^5.24.0",
     "gatsby-transformer-sharp": "^4.24.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "twind": "^0.16.17"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.8.4",

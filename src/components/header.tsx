@@ -1,14 +1,33 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { tw } from "twind"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+
+const Container = styled.header({
+    margin: '0 auto',
+    maxWidth: '56rem',
+    padding: '2.5rem 1rem',
+    '@media screen and (min-width: 480px)': {
+        padding: '5rem 1rem',
+    },
+})
+
+const Title = css({
+    fontSize: "3.5rem",
+    lineHeight: 1,
+    fontWeight: 900,
+    letterSpacing: "-0.05em",
+    color: "#efb864",
+    textDecoration: "none",
+})
 
 const Header = () => {
     return (
-        <header className={tw`max-w-4xl mx-auto py-10 px-4 sm:py-20`}>
+        <Container>
             <h1>
-                <Link to="/" className={tw`font-black text(transparent 6xl) bg(clip-text gradient-to-r) from-amber-400 to-orange-500 tracking-tighter`}>Lon<br/>Sagisawa</Link>
+                <Link to="/" css={ Title }>Lon<br/>Sagisawa</Link>
             </h1>
-        </header>
+        </Container>
     )
 }
 
