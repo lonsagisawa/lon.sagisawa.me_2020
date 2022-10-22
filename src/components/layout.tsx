@@ -13,7 +13,7 @@ const Wrapper = styled.div({
     /* Dark mode */
     '@media (prefers-color-scheme: dark)': {
         backgroundColor: '#111',
-        color: "f2f2f0",
+        color: "#f2f2f0",
     },
     'code, pre': {
         fontFamily: '"JetBrains Mono", "monospace"',
