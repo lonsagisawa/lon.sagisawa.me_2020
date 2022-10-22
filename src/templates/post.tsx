@@ -87,7 +87,10 @@ export default function Post({ data, pageContext }) {
         '.gatsby-resp-image-wrapper': {
             marginTop: '1rem',
             marginBottom: '1rem',
-        }
+        },
+        img: {
+            maxWidth: '100%',
+        },
     })
 
     const rounded = css({
