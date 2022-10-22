@@ -4,41 +4,106 @@ import Layout from "../components/layout"
 import Helmet from "../components/helmet"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PostNav from "../components/post-nav"
-import { tw } from "twind"
-import { css, apply } from "twind/css"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
 export default function Post({ data, pageContext }) {
     const post = data.post
     const body = post.body.childMarkdownRemark.html
     const coverImg = getImage(post.cover)
 
-    const postStyle = css( apply`font-sans leading-relaxed`, {
-        p: apply`mb-4`,
-        h1: apply`text-3xl font-bold mb-1`,
-        h2: apply`text-2xl font-bold mb-1`,
-        h3: apply`text-xl font-bold mb-1`,
-        h4: apply`text-lg font-bold mb-1`,
-        ul: apply`list-disc ml-2 mb-4`,
-        li: apply`ml-2`,
-        ol: apply`list-decimal`,
-        table: apply`w-full table-auto my-4`,
-        thead: apply`border(b gray-300)`,
-        td: apply`px-1`,
-        tr: apply`border(b gray-200)`,
-        a: apply`underline transition hover:text-transparent bg(clip-text gradient-to-r) from-amber-400 to-orange-500`,
-        pre: apply`rounded p-2 sm:p-4 mb-4 overflow-auto text-sm`,
+    const Article = styled.article({
+        marginBottom: "2rem",
+    })
+
+    const PostHeader = styled.div({
+        margin: "1rem 0",
+        fontWeight: 700,
+    })
+    
+    const PostTitle = styled.h1({
+        fontSize: "1.75rem",
+        marginBottom: "0.25rem",
+    })
+
+    const PostDate = styled.p({
+        marginBlock: 0,
+        fontSize: "0.85rem",
+        opacity: 0.75,
+    })
+
+    const PostText = styled.div({
+        lineHeight: "1.75",
+        p: {
+            marginBlockStart: 0,
+            marginBlockEnd: '0.5rem',
+        },
+        "h1, h2, h3, h4": {
+            fontWeight: 700,
+            marginBottom: "0.25rem",
+        },
+        h1: { fontSize: "1.75rem" },
+        h2: { fontSize: "1.5rem" },
+        h3: { fontSize: "1.25rem" },
+        h4: { fontSize: "1.1rem" },
+        ul: {
+            listStyleType: "disc",
+            marginBlockStart: 0,
+        },
+        ol: { listStyleType: "decimal" },
+        table: {
+            width: "100%",
+            tableLayout: "auto",
+            margin: "1rem 0",
+        },
+        td: { padding: "0.2rem" },
+        tr: {
+            borderStyle: 'solid',
+            borderWidth: "0 0 0.5px 0",
+            borderColor: "rgba(63, 55, 74, 0.5)", 
+            "@media (prefers-color-scheme: dark)": {
+                borderColor: "rgba(242, 242, 240, 0.5)",
+            },
+        },
+        a: {
+            textDecoration: "underline",
+            transition: "all 100ms ease-out",
+            color: "inherit",
+            ":hover": {
+                color: "#80a3b0",
+            },
+        },
+        pre: {
+            borderRadius: "0.5rem",
+            padding: "0.5rem",
+            marginBottom: "1rem",
+            overflow: "auto",
+            fontSize: "0.8rem",
+        },
+        ".shiki-unknown": {
+            backgroundColor: "#263238",
+            color: "#eeffff",
+        },
+        '.gatsby-resp-image-wrapper': {
+            marginTop: '1rem',
+            marginBottom: '1rem',
+        }
+    })
+
+    const rounded = css({
+        borderRadius: "0.5rem",
     })
 
     return (
         <Layout>
-            <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" className={tw`rounded`} imgClassName={tw`rounded`} />
-            <article className={tw`mb-8`}>
-                <div className={tw`my-4`}>
-                    <h1 className={tw`font-bold text-3xl mb-1`}>{ post.title }</h1>
-                    <p className={tw`font-bold text(sm gray-600 dark:gray-400)`}>{ post.date }</p>
-                </div>
-                <div className={tw(postStyle)} dangerouslySetInnerHTML={{ __html: body }} />
-            </article>
+            <Article>
+                <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" css={ rounded } />
+                <PostHeader>
+                    <PostTitle>{ post.title }</PostTitle>
+                    <PostDate>{ post.date }</PostDate>
+                </PostHeader>
+                <PostText dangerouslySetInnerHTML={{ __html: body }} />
+            </Article>
             <PostNav next={ pageContext.next } prev={ pageContext.prev } />
         </Layout>
     )

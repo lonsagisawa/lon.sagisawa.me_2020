@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { tw } from "twind"
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 
 const PostLink = ({ post }) => {
     const { title, date } = post;
@@ -10,19 +11,53 @@ const PostLink = ({ post }) => {
     const coverTitle = post.cover.title;
     const pageLink = `/${post.year}/${post.month}/${post.slug}`
 
+    const PostDesc = styled.div({
+        marginTop: '0.5rem',
+        marginBottom: '1.5rem',
+    })
+
+    const PostTitle = styled.h2({
+        fontSize: '1.5rem',
+        fontWeight: 700,
+        marginBottom: '0.25rem',
+    })
+
+    const PostTitleLink = css({
+        textDecoration: 'underline',
+        color: 'inherit',
+        ':hover': {
+            color: '#80a3b0',
+            transition: 'all 100ms ease-out',
+        }
+    })
+    
+    const PostDate = styled.p({
+        fontSize: '0.85rem',
+        fontWeight: 700,
+        opacity: 0.75,
+        marginBlock: '0.25rem',
+    })
+
+    const PostImage = css({
+        borderRadius: '0.5rem',
+    })
+
+    const PostExcerpt = styled.p({
+        marginBlock: 0,
+    })
+
     return (
         <div>
             <GatsbyImage
-                image={ coverImg }
-                className={ tw`rounded` }
-                imgClassName={ tw`rounded` }
-                alt={ coverTitle }
+                image = { coverImg }
+                alt = { coverTitle }
+                css = { PostImage }
             />
-            <div className={tw`my-4`}>
-                <h2 className={tw`text-2xl font-bold mb-1`}><Link to={ pageLink } className={tw`border(b-1 gray-500) transition hover:(text-transparent border-amber-400) bg(clip-text gradient-to-r) from-amber-400 to-orange-500`}>{ title }</Link></h2>
-                <p className={tw`text(sm gray-600 dark:gray-400) font-bold mb-1`}>{ date }</p>
-                <p>{ description }</p>
-            </div>
+            <PostDesc>
+                <PostTitle><Link to={ pageLink } css={ PostTitleLink }>{ title }</Link></PostTitle>
+                <PostDate>{ date }</PostDate>
+                <PostExcerpt>{ description }</PostExcerpt>
+            </PostDesc>
         </div>
     )
 }

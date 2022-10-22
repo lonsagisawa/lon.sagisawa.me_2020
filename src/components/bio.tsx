@@ -1,30 +1,78 @@
 import * as React from "react"
-import type { PageProps } from "gatsby"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { tw } from "twind"
-import { apply, css } from "twind/css"
+import styled from "@emotion/styled"
 
 const Bio = () => {
-    const bioStyle = css( apply`my-auto`, {
-        a: apply`underline hover:text-gray-200 transition`,
+    const Footer = styled.footer({
+        backgroundColor: '#3f374a',
+        color: 'rgba(242, 242, 240, 0.5)',
+        padding: '3rem 0',
+    })
+
+    const Container = styled.div({
+        fontWeight: 500,
+        padding: '0 1rem',
+        margin: '0 auto',
+        maxWidth: '56rem',
+        '@media screen and (min-width: 480px)': {
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            justifyContent: 'space-between',
+        },
+        a: {
+            color: 'inherit',
+            textDecoration: 'underline',
+            transition: 'all 100ms ease-out',
+            ':hover': {
+                color: '#f2f2f0',
+            }
+        },
+    })
+
+    const Left = styled.div({
+        paddingBottom: '2rem',
+        '@media screen and (min-width: 480px)': {
+            paddingBottom: 0,
+        },
+    })
+
+    const Right = styled.div({
+        margin: 'auto 0',
+        textAlign: 'center',
+        fontSize: '2rem',
+        lineHeight: 1,
+        '@media screen and (min-width: 480px)': {
+            textAlign: 'right',
+        },
+    })
+
+    const BioName = styled.p({
+        fontWeight: 900,
+        fontSize: '2rem',
+        lineHeight: 1,
+        letterSpacing: '-0.05em',
+        marginBlock: 0,
+        marginBottom: '0.5rem',
+    })
+
+    const BioText = styled.p({
+        fontSize: '0.75rem',
+        marginBlock: 0,
     })
 
     return (
-        <footer className={tw`bg-gray-800 dark:bg-black text-gray-500 dark:text-gray-600 py-12`}>
-            <div className={tw`sm:(grid grid-cols-2 justify-between) px-4 mx-auto max-w-4xl`}>
-                <div className={tw(bioStyle, `pb-8 sm:pb-0`)}>
-                    {/* <StaticImage src="../images/logo.png" alt="logo" width={180} height={180} className="rounded-xl" imgClassName="rounded-xl" /> */}
-                    <p className={tw`font-black text-3xl tracking-tighter`}>Lon<br />Sagisawa</p>
-                    <p className={tw`text-xs`}>Content All rights reserved. Code is <Link href="https://github.com/lonsagisawa/lon.sagisawa.me">available</Link> at 0BSD license.<br />Powered by <Link href="https://www.gatsbyjs.com">Gatsby</Link> and <Link href="https://twind.dev">Twind</Link>. Hosted on <Link href="https://vercel.com">Vercel</Link>.</p>
-                </div>
-                <div className={tw(bioStyle, `text-center sm:text-right`)}>
-                    <Link href="https://github.com/lonsagisawa" className={tw`text-4xl`}><FontAwesomeIcon icon={faGithub} /></Link>
-                </div>
-            </div>
-        </footer>
+        <Footer>
+            <Container>
+                <Left>
+                    <BioName>Lon<br />Sagisawa</BioName>
+                    <BioText>Content All rights reserved. Code is <a href="https://github.com/lonsagisawa/lon.sagisawa.me">available</a> at 0BSD license.<br />Powered by <a href="https://www.gatsbyjs.com">Gatsby</a>. Hosted on <a href="https://vercel.com">Vercel</a>.</BioText>
+                </Left>
+                <Right>
+                    <a href="https://github.com/lonsagisawa"><FontAwesomeIcon icon={ faGithub } /></a>
+                </Right>
+            </Container>
+        </Footer>
     )
 }
 

@@ -1,31 +1,43 @@
 import * as React from "react"
 import Header from "./header"
 import Bio from "./bio"
-import { setup, tw } from 'twind'
-import * as colors from 'twind/colors'
+import styled from "@emotion/styled"
+import { SanitizeCSS } from "emotion-sanitize"
 import "@fontsource/inter/variable.css"
 import "@fontsource/jetbrains-mono"
 
+const Wrapper = styled.div({
+    fontFamily: '"InterVariable", "BIZ UDPGothic", "Hiragino Sans", "sans-serif"',
+    backgroundColor: '#f2f2f0',
+    color: '#3f374a',
+    /* Dark mode */
+    '@media (prefers-color-scheme: dark)': {
+        backgroundColor: '#111',
+        color: "f2f2f0",
+    },
+    'code, pre': {
+        fontFamily: '"JetBrains Mono", "monospace"',
+    },
+    'h1, h2, h3, h4, h5, h6': {
+        marginBlock: 0,
+    }
+})
+
+const Container = styled.main({
+    padding: '0 1rem',
+    margin: '0 auto 2rem',
+    maxWidth: '56rem',
+})
+
 const Layout = ({ children }) => {
     return (
-        <div className={tw`text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900`}>
+        <Wrapper>
+            <SanitizeCSS sanitize reduceMotion />
             <Header />
-            <main className={tw`px-4 mx-auto max-w-4xl mb-8`}>{children}</main>
+            <Container>{children}</Container>
             <Bio />
-        </div>
+        </Wrapper>
     )
 }
-
-setup({
-    theme: {
-        fontFamily: {
-            sans: ['InterVariable', 'Hiragino Sans', 'BIZ UDPGothic', 'Meiryo', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-        },
-        extend: {
-            colors,
-        },
-    },
-})
 
 export default Layout
