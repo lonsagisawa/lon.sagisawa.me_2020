@@ -52,6 +52,7 @@ const PostLink = ({ post }) => {
                 image = { coverImg }
                 alt = { coverTitle }
                 css = { PostImage }
+                loading = 'eager'
             />
             <PostDesc>
                 <PostTitle><Link to={ pageLink } css={ PostTitleLink }>{ title }</Link></PostTitle>
