@@ -5,13 +5,23 @@ import styled from "@emotion/styled"
 const Container = styled.header({
     margin: '0 auto',
     maxWidth: '56rem',
-    padding: '2.5rem 1rem',
+    padding: '0 1rem',
+    minHeight: '14rem',
+    position: 'relative',
     '@media screen and (min-width: 480px)': {
-        padding: '5rem 1rem',
+        minHeight: '16rem',
     },
 })
 
-const Title = styled(Link)({
+const Title = styled.h1({
+    display: 'block',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    marginBlock: 0,
+})
+
+const TitleLink = styled(Link)({
     fontSize: "3.5rem",
     lineHeight: 1,
     fontWeight: 900,
@@ -23,9 +33,9 @@ const Title = styled(Link)({
 const Header = () => {
     return (
         <Container>
-            <h1>
-                <Title to="/" css={ Title }>Lon<br/>Sagisawa</Title>
-            </h1>
+            <Title>
+                <TitleLink to="/">Lon<br/>Sagisawa</TitleLink>
+            </Title>
         </Container>
     )
 }
