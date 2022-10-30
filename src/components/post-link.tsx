@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 const PostLink = ({ post }) => {
     const { title, date } = post;
@@ -22,7 +21,7 @@ const PostLink = ({ post }) => {
         marginBottom: '0.25rem',
     })
 
-    const PostTitleLink = css({
+    const PostTitleLink = styled(Link)({
         textDecoration: 'underline',
         color: 'inherit',
         ':hover': {
@@ -38,7 +37,7 @@ const PostLink = ({ post }) => {
         marginBlock: '0.25rem',
     })
 
-    const PostImage = css({
+    const PostImage = styled(GatsbyImage)({
         borderRadius: '0.5rem',
     })
 
@@ -48,14 +47,13 @@ const PostLink = ({ post }) => {
 
     return (
         <div>
-            <GatsbyImage
+            <PostImage
                 image = { coverImg }
                 alt = { coverTitle }
-                css = { PostImage }
                 loading = 'eager'
             />
             <PostDesc>
-                <PostTitle><Link to={ pageLink } css={ PostTitleLink }>{ title }</Link></PostTitle>
+                <PostTitle><PostTitleLink to={ pageLink }>{ title }</PostTitleLink></PostTitle>
                 <PostDate>{ date }</PostDate>
                 <PostExcerpt>{ description }</PostExcerpt>
             </PostDesc>

@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 const PostLinkMinimal = ({ post }) => {
     const { title, date } = post;
@@ -21,7 +20,7 @@ const PostLinkMinimal = ({ post }) => {
         margin: '1rem 0',
     })
 
-    const CoverImg = css({
+    const CoverImg = styled(GatsbyImage)({
         borderRadius: '0.5rem',
         display: 'none',
         '@media screen and (min-width: 768px)': {
@@ -44,7 +43,7 @@ const PostLinkMinimal = ({ post }) => {
         }
     })
 
-    const PostLink = css({
+    const PostLink = styled(Link)({
         fontSize: '1.25rem',
         fontWeight: 700,
         textDecoration: 'underline',
@@ -64,9 +63,9 @@ const PostLinkMinimal = ({ post }) => {
 
     return (
         <Container>
-            <GatsbyImage image={ coverImg } alt={ coverTitle } css={ CoverImg } />
+            <CoverImg image={ coverImg } alt={ coverTitle } />
             <PostInfo>
-                <Link to={ pageLink } css={ PostLink } >{ title }</Link>
+                <PostLink to={ pageLink }>{ title }</PostLink>
                 <PostDate>{ date }</PostDate>
                 <PostDesc>{ description }</PostDesc>
             </PostInfo>

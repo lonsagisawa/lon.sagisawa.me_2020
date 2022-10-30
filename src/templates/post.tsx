@@ -5,7 +5,6 @@ import Helmet from "../components/helmet"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PostNav from "../components/post-nav"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 export default function Post({ data, pageContext }) {
     const post = data.post
@@ -93,14 +92,14 @@ export default function Post({ data, pageContext }) {
         },
     })
 
-    const rounded = css({
+    const PostImage = styled(GatsbyImage)({
         borderRadius: "0.5rem",
     })
 
     return (
         <Layout>
             <Article>
-                <GatsbyImage image={ coverImg } alt={ post.cover.title } loading="eager" css={ rounded } />
+                <PostImage image={ coverImg } alt={ post.cover.title } loading="eager" />
                 <PostHeader>
                     <PostTitle>{ post.title }</PostTitle>
                     <PostDate>{ post.date }</PostDate>

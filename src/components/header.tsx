@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 const Container = styled.header({
     margin: '0 auto',
@@ -12,7 +11,7 @@ const Container = styled.header({
     },
 })
 
-const Title = css({
+const Title = styled(Link)({
     fontSize: "3.5rem",
     lineHeight: 1,
     fontWeight: 900,
@@ -25,7 +24,7 @@ const Header = () => {
     return (
         <Container>
             <h1>
-                <Link to="/" css={ Title }>Lon<br/>Sagisawa</Link>
+                <Title to="/" css={ Title }>Lon<br/>Sagisawa</Title>
             </h1>
         </Container>
     )

@@ -3,10 +3,10 @@ import { graphql, PageProps, Link } from "gatsby"
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import Helmet from "../components/helmet"
-import { css } from "@emotion/react"
+import styled from "@emotion/styled"
 
 const Home = ({ data }: PageProps) => {
-    const ArchiveButton = css({
+    const ArchiveButton = styled(Link)({
         display: "block",
         color: "#efb864",
         fontSize: "1.25rem",
@@ -31,7 +31,7 @@ const Home = ({ data }: PageProps) => {
             { data.allContentfulPost.edges.map(edge =>
                 <PostLink key={edge.node.slug} post={edge.node} />
             ) }
-            <Link to="/archive" css={ ArchiveButton }>すべての記事を見る</Link>
+            <ArchiveButton to="/archive">すべての記事を見る</ArchiveButton>
         </Layout>
     )
 }

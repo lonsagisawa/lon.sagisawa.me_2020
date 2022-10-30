@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 
 const PostNav = ({ next, prev }) => {
     const prevCover = prev == null ? null : getImage( prev.cover )
@@ -30,7 +29,7 @@ const PostNav = ({ next, prev }) => {
         }
     })
 
-    const NavLink = css({
+    const NavLink = styled(Link)({
         textDecoration: "none",
         color: "inherit",
     })
@@ -50,7 +49,7 @@ const PostNav = ({ next, prev }) => {
         marginBlock: 0,
     })
 
-    const NavImg = css({
+    const NavImg = styled(GatsbyImage)({
         borderRadius: '0.5rem',
         gridColumn: 'span 1 / span 1',
         display: 'none',
@@ -71,26 +70,26 @@ const PostNav = ({ next, prev }) => {
     return (
         <Nav>
             { prev == null ? null :
-                <Link to={ prev.prefix + prev.slug } css={ NavLink }>
+                <NavLink to={ prev.prefix + prev.slug }>
                     <NavContainer>
-                        <GatsbyImage image={ prevCover } alt={ prev.cover.title } css={ NavImg } />
+                        <NavImg image={ prevCover } alt={ prev.cover.title } />
                         <NavTitleWrapper>
                             <NavTitleSub>前の記事</NavTitleSub>
                             <NavTitle>{ prev.title }</NavTitle>
                         </NavTitleWrapper>
                     </NavContainer>
-                </Link>
+                </NavLink>
             }
             { next == null ? null : 
-                <Link to={ next.prefix + next.slug } css={ NavLink }>
+                <NavLink to={ next.prefix + next.slug }>
                     <NavContainer>
-                        <GatsbyImage image={ nextCover } alt={ next.cover.title } css={ NavImg } />
+                        <NavImg image={ nextCover } alt={ next.cover.title } />
                         <NavTitleWrapper>
                             <NavTitleSub>次の記事</NavTitleSub>
                             <NavTitle>{ next.title }</NavTitle>
                         </NavTitleWrapper>
                     </NavContainer>
-                </Link>
+                </NavLink>
             }
         </Nav>
     )
