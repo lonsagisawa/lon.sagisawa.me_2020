@@ -1,67 +1,29 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "lon-sagisawa",
+  "version": "1.0.0",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "description": "lon-sagisawa",
+  "author": "Lon Sagisawa",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "dev": "gatsby develop",
-    "develop-docker": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@fontsource/inter": "^4.5.14",
-    "@fontsource/jetbrains-mono": "^4.5.11",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "dotenv": "^16.0.3",
-    "emotion-sanitize": "^12.0.2",
-    "gatsby": "^4.24.6",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-emotion": "^7.24.0",
-    "gatsby-plugin-feed": "^4.24.0",
-    "gatsby-plugin-gatsby-cloud": "^4.24.1",
-    "gatsby-plugin-image": "^2.24.0",
-    "gatsby-plugin-manifest": "^4.24.0",
-    "gatsby-plugin-offline": "^5.24.0",
-    "gatsby-plugin-sharp": "^4.24.0",
-    "gatsby-plugin-typescript": "^4.24.0",
-    "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^6.24.0",
-    "gatsby-remark-images-contentful": "^5.24.0",
-    "gatsby-remark-shiki": "^0.3.0",
-    "gatsby-source-contentful": "^7.22.0",
-    "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-transformer-remark": "^5.24.0",
-    "gatsby-transformer-sharp": "^4.24.0",
+    "gatsby": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
-    "@types/react": "^18.0.24",
+    "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "eslint": "^8.26.0",
-    "eslint-plugin-react": "^7.31.10",
-    "prettier": "^2.7.1",
     "typescript": "^4.8.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
