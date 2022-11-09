@@ -1,1 +1,1 @@
-import 'the-new-css-reset'
+import 'the-new-css-reset';

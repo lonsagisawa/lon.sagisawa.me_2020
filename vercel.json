@@ -12,16 +12,16 @@
                     "value": "DENY"
                 },
                 {
-                    "key" : "X-XSS-Protection",
-                    "value" : "1; mode=block"
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
                 },
                 {
-                    "key" : "Referrer-Policy",
-                    "value" : "strict-origin"
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin"
                 },
                 {
-                    "key" : "Permissions-Policy",
-                    "value" : "geolocation=(self), microphone=()"
+                    "key": "Permissions-Policy",
+                    "value": "geolocation=(self), microphone=()"
                 }
             ]
         }
