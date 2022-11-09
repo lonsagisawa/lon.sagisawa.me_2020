@@ -1,4 +1,4 @@
 /* Set HTML lang attribute */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-    setHtmlAttributes({ lang: 'ja' })
+exports.onRenderBody = ({ setHtmlAttributes }: any) => {
+    setHtmlAttributes({ lang: "ja" })
 }

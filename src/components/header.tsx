@@ -1,47 +1,37 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
+import * as React from "react"
+import { Link } from "gatsby"
+import styled from "@emotion/styled"
 
 interface HeaderProps {
     pageTitle?: string
 }
 
-const Background = styled.div`
-    background-color: #000;
-    color: #fff;
-`
+const Background = styled.div``
 
-const Container = styled.header`
-    max-width: 40rem;
-    min-height: 8rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-`
+const Container = styled.header({
+    minHeight: "8rem",
+    margin: "0 1rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    "@media screen and (min-width: 480px)": {
+        maxWidth: "48rem",
+        margin: "0 auto",
+    },
+})
 
-const Title = styled.h1`
-    font-size: 2rem;
-`
+const Title = styled.h1({
+    fontSize: "2rem",
+    fontWeight: 900,
+})
 
 const Header = ({ pageTitle }: HeaderProps): any => {
-    /* Pulls site title from siteMetadata */
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `)
-
     return (
         <Background>
             <Container>
                 <Title>
-                    <Link to="/">{data.site.siteMetadata.title}</Link>
+                    <Link to="/">Lon Sagisawa</Link>
                 </Title>
                 <p>{pageTitle}</p>
             </Container>

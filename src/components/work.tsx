@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as React from "react"
 
-const Footer = (): any => {
-    return <p>(C) Lon Sagisawa 2022.</p>
+const Work = (): any => {
+    return <div>制作物</div>
 }
 
-export default Footer
+export default Work
