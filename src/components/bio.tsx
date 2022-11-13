@@ -3,6 +3,7 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
+import { Github, Twitter, Twitch } from "react-bootstrap-icons"
 
 const Container = styled.div({
     margin: "1rem 0",
@@ -28,6 +29,12 @@ const BioText = styled.div({
     },
 })
 
+const BioSocial = styled.div({
+    svg: {
+        marginRight: "0.5rem",
+    },
+})
+
 const BioImg = css({
     borderRadius: "100px",
     margin: "1rem 0",
@@ -45,10 +52,22 @@ const Bio = (): any => {
             />
             <BioText>
                 <h2>Lon Sagisawa(鷺沢ろん)</h2>
+                <BioSocial>
+                    <a href="https://github.com/lonsagisawa">
+                        <Github size="2rem" />
+                    </a>
+                    <a href="https://twitter.com/lsgsw">
+                        <Twitter size="2rem" />
+                    </a>
+                    <a href="https://twitch.tv/lonsagisawa">
+                        <Twitch size="2rem" />
+                    </a>
+                </BioSocial>
                 <p>
-                    1995年、日本国・福井県に生まれる。
+                    1995年、日本国・福井県生まれ。
                     <br />
-                    個人開発として15年以上のHTMLとCSS、10年以上のLinuxサーバー管理の経験を持つ。
+                    個人開発として15年以上のHTMLとCSSのコーディング経験、また10年以上のLinuxサーバー管理(Debian系,
+                    Arch Linux)の経験を持つ。
                     <br />
                     2014年頃から費用を抑えながらパフォーマンスの優れたWebサイトを構築するためJekyll,
                     Hexo,
