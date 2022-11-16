@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
@@ -7,7 +5,9 @@ interface HeaderProps {
     pageTitle?: string
 }
 
-const Background = styled.div``
+const Background = styled.div({
+    borderBottom: "0.1px solid #222",
+})
 
 const Container = styled.header({
     minHeight: "8rem",

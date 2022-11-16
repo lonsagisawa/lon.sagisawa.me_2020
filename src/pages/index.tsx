@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from "react"
+import { graphql, PageProps, Link } from "gatsby"
 import Layout from "../components/layout"
 import Helmet from "../components/helmet"
 import Bio from "../components/bio"
@@ -22,18 +21,23 @@ const PostListWrapper = styled.div({
     padding: "1rem 0",
 })
 
-const Index = (): any => {
+const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
     return (
         <Layout>
             <Headline>プロフィール</Headline>
             <Bio />
             <Headline>最新記事</Headline>
             <PostListWrapper>
-                <ul>
-                    <li>記事</li>
-                    <li>記事</li>
-                    <li>記事</li>
-                </ul>
+                {data.allContentfulPost.edges.map((edge) => (
+                    <>
+                        <Link
+                            to={`/${edge.node.year}/${edge.node.month}/${edge.node.slug}`}
+                        >
+                            {edge.node.title}
+                        </Link>
+                        <p>{edge.node.date}</p>
+                    </>
+                ))}
             </PostListWrapper>
             <Headline>制作物</Headline>
             <Work />
@@ -44,3 +48,19 @@ const Index = (): any => {
 export const Head = (): any => <Helmet title="Lon Sagisawa" />
 
 export default Index
+
+export const query = graphql`
+    query Index {
+        allContentfulPost(limit: 3) {
+            edges {
+                node {
+                    date
+                    slug
+                    title
+                    year: date(formatString: "YYYY")
+                    month: date(formatString: "MM")
+                }
+            }
+        }
+    }
+`

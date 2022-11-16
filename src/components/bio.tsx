@@ -1,8 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
 import { Github, Twitter, Twitch } from "react-bootstrap-icons"
 
 const Container = styled.div({
@@ -24,9 +20,6 @@ const BioText = styled.div({
         fontWeight: 700,
         marginBottom: "0.5rem",
     },
-    "@media screen and (min-width: 480px)": {
-        maxWidth: "32rem",
-    },
 })
 
 const BioSocial = styled.div({
@@ -35,23 +28,11 @@ const BioSocial = styled.div({
     },
 })
 
-const BioImg = css({
-    borderRadius: "100px",
-    margin: "1rem 0",
-})
-
 const Bio = (): any => {
     return (
         <Container>
-            <StaticImage
-                src="../images/logo.png"
-                width={200}
-                height={200}
-                alt="logo"
-                css={BioImg}
-            />
             <BioText>
-                <h2>Lon Sagisawa(鷺沢ろん)</h2>
+                <h2>Lon Sagisawa / 鷺沢ろん</h2>
                 <BioSocial>
                     <a href="https://github.com/lonsagisawa">
                         <Github size="2rem" />

@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from "react"
 import Layout from "../components/layout"
 import Helmet from "../components/helmet"
 

@@ -1,4 +1,3 @@
-import * as React from "react"
 import styled from "@emotion/styled"
 import Header from "./header"
 import Footer from "./footer"
@@ -19,11 +18,11 @@ const Container = styled.main({
 
 const Layout = ({ pageTitle, children }: LayoutProps): any => {
     return (
-        <React.Fragment>
+        <>
             <Header pageTitle={pageTitle} />
             <Container>{children}</Container>
             <Footer />
-        </React.Fragment>
+        </>
     )
 }
 

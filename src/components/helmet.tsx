@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as React from "react"
-
 interface HelmProps {
     title: string
     description?: string
