@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Github, Twitter, Twitch } from "react-bootstrap-icons"
+import { Github, Twitter, Twitch, Mastodon } from "react-bootstrap-icons"
 
 const Container = styled.div({
     margin: "1rem 0",
@@ -36,6 +36,9 @@ const Bio = (): any => {
                 <BioSocial>
                     <a href="https://github.com/lonsagisawa">
                         <Github size="2rem" />
+                    </a>
+                    <a href="https://social.vivaldi.net/@lonsagisawa">
+                        <Mastodon size="2rem" />
                     </a>
                     <a href="https://twitter.com/lsgsw">
                         <Twitter size="2rem" />
