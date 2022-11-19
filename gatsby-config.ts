@@ -27,6 +27,21 @@ const config: GatsbyConfig = {
                 host: process.env.CONTENTFUL_HOST,
             },
         },
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                gfm: true,
+                plugins: [
+                    "gatsby-remark-prismjs",
+                    {
+                        resolve: "gatsby-remark-images-contentful",
+                        options: {
+                            maxWidth: 768,
+                        },
+                    },
+                ],
+            },
+        },
     ],
 }
 
