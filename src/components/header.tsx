@@ -7,10 +7,11 @@ interface HeaderProps {
 
 const Background = styled.div({
     borderBottom: "0.1px solid #222",
+    marginBottom: "1rem",
 })
 
 const Container = styled.header({
-    minHeight: "8rem",
+    minHeight: "10rem",
     margin: "0 1rem",
     display: "flex",
     flexDirection: "column",
@@ -22,8 +23,9 @@ const Container = styled.header({
 })
 
 const Title = styled.h1({
-    fontSize: "2rem",
+    fontSize: "3rem",
     fontWeight: 900,
+    lineHeight: 0.9,
 })
 
 const Header = ({ pageTitle }: HeaderProps): any => {
@@ -31,7 +33,11 @@ const Header = ({ pageTitle }: HeaderProps): any => {
         <Background>
             <Container>
                 <Title>
-                    <Link to="/">Lon Sagisawa</Link>
+                    <Link to="/">
+                        Lon
+                        <br />
+                        Sagisawa
+                    </Link>
                 </Title>
                 <p>{pageTitle}</p>
             </Container>
