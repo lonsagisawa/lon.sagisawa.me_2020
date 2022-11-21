@@ -3,11 +3,13 @@ import Layout from "../components/layout"
 import Helmet from "../components/helmet"
 import Bio from "../components/bio"
 import Work from "../components/work"
+import PostLink from "../components/post-link"
 import styled from "@emotion/styled"
 
 const Headline = styled.h2({
     fontSize: "1.5rem",
     fontWeight: 700,
+    margin: "1rem 0",
     display: "inline-flex",
     flexDirection: "column",
     ":after": {
@@ -17,28 +19,22 @@ const Headline = styled.h2({
     },
 })
 
-const PostListWrapper = styled.div({
-    padding: "1rem 0",
-})
-
 const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
     return (
         <Layout>
             <Headline>プロフィール</Headline>
             <Bio />
             <Headline>最新記事</Headline>
-            <PostListWrapper>
-                {data.allContentfulPost.edges.map((edge) => (
-                    <>
-                        <Link
-                            to={`/${edge.node.year}/${edge.node.month}/${edge.node.slug}`}
-                        >
-                            {edge.node.title}
-                        </Link>
-                        <p>{edge.node.date}</p>
-                    </>
-                ))}
-            </PostListWrapper>
+            {data.allContentfulPost.edges.map((edge) => (
+                <>
+                    <PostLink
+                        title={edge.node.title}
+                        url={`/${edge.node.year}/${edge.node.month}/${edge.node.slug}`}
+                        description={edge.node.description.description}
+                        date={edge.node.date}
+                    />
+                </>
+            ))}
             <Headline>制作物</Headline>
             <Work />
         </Layout>
@@ -54,11 +50,14 @@ export const query = graphql`
         allContentfulPost(limit: 3) {
             edges {
                 node {
-                    date
+                    date(formatString: "YYYY年MM月DD日")
                     slug
                     title
                     year: date(formatString: "YYYY")
                     month: date(formatString: "MM")
+                    description {
+                        description
+                    }
                 }
             }
         }
