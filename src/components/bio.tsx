@@ -2,7 +2,6 @@ import styled from "@emotion/styled"
 import { Github, Twitter, Twitch, Mastodon } from "react-bootstrap-icons"
 
 const Container = styled.div({
-    margin: "1rem 0",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -24,7 +23,7 @@ const BioText = styled.div({
 
 const BioSocial = styled.div({
     svg: {
-        marginRight: "0.5rem",
+        marginRight: "0.75rem",
     },
 })
 
@@ -34,16 +33,32 @@ const Bio = (): any => {
             <BioText>
                 <h2>Lon Sagisawa / 鷺沢ろん</h2>
                 <BioSocial>
-                    <a href="https://github.com/lonsagisawa">
+                    <a
+                        href="https://github.com/lonsagisawa"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Github size="2rem" />
                     </a>
-                    <a href="https://social.vivaldi.net/@lonsagisawa">
+                    <a
+                        href="https://social.vivaldi.net/@lonsagisawa"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Mastodon size="2rem" />
                     </a>
-                    <a href="https://twitter.com/lsgsw">
+                    <a
+                        href="https://twitter.com/lsgsw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Twitter size="2rem" />
                     </a>
-                    <a href="https://twitch.tv/lonsagisawa">
+                    <a
+                        href="https://twitch.tv/lonsagisawa"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Twitch size="2rem" />
                     </a>
                 </BioSocial>
@@ -58,7 +73,7 @@ const Bio = (): any => {
                     Hugoといった静的サイトジェネレーターでのWebサイト構築を行う中、Gatsbyとの出会いをきっかけにモダンWebフロントエンドの世界を知る。
                     <br />
                     従前から取り組んでいた静的サイト構築がJamstackとして飛躍的な発展を遂げる中で、TypeScript,
-                    React, Emotion,
+                    React, CSS-in-JS,
                     GraphQLなど、Gatsbyで使われるものを中心にWebフロントエンドスタックの習得に励む。
                     <br />
                     趣味としてビデオゲーム(音楽ゲーム等)、写真撮影、F1観戦、eスポーツ観戦、P業(喜多日菜子,
