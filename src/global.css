@@ -4,13 +4,13 @@
 }
 
 body {
-    color: #111;
-    background-color: #fefefe;
+    color: #20202c;
+    background-color: #f3f3fc;
 }
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #111;
-        color: #fefefe;
+        background-color: #20202c;
+        color: #f3f3fc;
     }
 }
