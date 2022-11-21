@@ -6,17 +6,16 @@ interface HeaderProps {
 }
 
 const Background = styled.div({
-    borderBottom: "0.1px solid #222",
     marginBottom: "1rem",
 })
 
 const Container = styled.header({
-    minHeight: "10rem",
-    margin: "0 1rem",
+    minHeight: "12rem",
+    margin: "0 2rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    "@media screen and (min-width: 480px)": {
+    "@media screen and (min-width: 769px)": {
         maxWidth: "48rem",
         margin: "0 auto",
     },
@@ -26,6 +25,7 @@ const Title = styled.h1({
     fontSize: "3rem",
     fontWeight: 900,
     lineHeight: 0.9,
+    letterSpacing: "-0.05em",
 })
 
 const Header = ({ pageTitle }: HeaderProps): any => {
