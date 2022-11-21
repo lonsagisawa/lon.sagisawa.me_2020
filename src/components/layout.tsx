@@ -9,11 +9,9 @@ interface LayoutProps {
 }
 
 const Container = styled.main({
-    margin: "0 1rem",
-    "@media screen and (min-width: 480px)": {
-        maxWidth: "48rem",
-        margin: "0 auto",
-    },
+    maxWidth: "51rem",
+    margin: "0 auto",
+    padding: "0 1.5rem",
 })
 
 const Layout = ({ pageTitle, children }: LayoutProps): any => {
