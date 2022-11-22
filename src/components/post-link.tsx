@@ -13,6 +13,7 @@ const WrapperLink = styled(Link)({
     borderWidth: "0.01px 0",
     borderColor: "#ccc",
     borderStyle: "solid",
+    transition: "all 100ms ease-out",
     ":hover": {
         backgroundColor: "#f0f0f0",
     },
