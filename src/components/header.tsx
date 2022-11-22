@@ -1,24 +1,18 @@
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
-interface HeaderProps {
-    pageTitle?: string
-}
-
 const Background = styled.div({
     marginBottom: "1rem",
 })
 
 const Container = styled.header({
     minHeight: "12rem",
-    margin: "0 2rem",
+    maxWidth: "51rem",
+    margin: "0 auto",
+    padding: "0 1.5rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    "@media screen and (min-width: 769px)": {
-        maxWidth: "48rem",
-        margin: "0 auto",
-    },
 })
 
 const Title = styled.h1({
@@ -28,7 +22,7 @@ const Title = styled.h1({
     letterSpacing: "-0.05em",
 })
 
-const Header = ({ pageTitle }: HeaderProps): any => {
+const Header = (): any => {
     return (
         <Background>
             <Container>
@@ -39,7 +33,6 @@ const Header = ({ pageTitle }: HeaderProps): any => {
                         Sagisawa
                     </Link>
                 </Title>
-                <p>{pageTitle}</p>
             </Container>
         </Background>
     )

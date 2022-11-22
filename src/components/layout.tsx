@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
-import Header from "./header"
-import Footer from "./footer"
+import { Slice } from "gatsby"
 import "../global.css"
 
 interface LayoutProps {
@@ -17,9 +16,9 @@ const Container = styled.main({
 const Layout = ({ pageTitle, children }: LayoutProps): any => {
     return (
         <>
-            <Header pageTitle={pageTitle} />
+            <Slice alias="header" />
             <Container>{children}</Container>
-            <Footer />
+            <Slice alias="footer" />
         </>
     )
 }

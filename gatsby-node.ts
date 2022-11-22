@@ -7,6 +7,16 @@ export const createPages: GatsbyNode["createPages"] = async ({
     actions,
 }) => {
     const { createPage } = actions
+
+    actions.createSlice({
+        id: "header",
+        component: path.resolve("./src/components/header.tsx"),
+    })
+    actions.createSlice({
+        id: "footer",
+        component: path.resolve("./src/components/footer.tsx"),
+    })
+
     const result = await graphql(`
         query CreatePost {
             allContentfulPost(sort: { date: DESC }) {
