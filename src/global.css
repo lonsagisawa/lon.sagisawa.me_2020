@@ -5,12 +5,12 @@
 
 body {
     color: #20202c;
-    background-color: #f3f3fc;
+    background-color: #f7f8fc;
 }
 
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #20202c;
-        color: #f3f3fc;
+        color: #f7f8fc;
     }
 }
