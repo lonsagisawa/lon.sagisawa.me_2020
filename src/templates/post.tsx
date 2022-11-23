@@ -12,6 +12,7 @@ const CoverImg = styled(GatsbyImage)({
 })
 
 const PostBody = styled.article({
+    marginBottom: "2rem",
     h1: {
         fontSize: "2rem",
         fontWeight: 700,
