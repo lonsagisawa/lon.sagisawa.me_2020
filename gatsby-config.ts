@@ -37,6 +37,8 @@ const config: GatsbyConfig = {
                         resolve: "gatsby-remark-images-contentful",
                         options: {
                             maxWidth: 768,
+                            withWebp: true,
+                            backgroundColor: "#797a80",
                         },
                     },
                 ],
