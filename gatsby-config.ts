@@ -42,6 +42,20 @@ const config: GatsbyConfig = {
                 ],
             },
         },
+        {
+            resolve: "gatsby-plugin-manifest",
+            options: {
+                name: "Lon Sagisawa",
+                short_name: "LS",
+                start_url: "/",
+                lang: "ja",
+                background_color: "#20202c",
+                theme_color: "#f4d059",
+                display: "minimal-ui",
+                icon: "src/images/logo.png",
+            },
+        },
+        "gatsby-plugin-offline",
     ],
 }
 
