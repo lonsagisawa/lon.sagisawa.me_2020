@@ -103,7 +103,12 @@ export const query = graphql`
                 description
             }
             cover {
-                gatsbyImageData(width: 768, aspectRatio: 2.5)
+                gatsbyImageData(
+                    width: 748
+                    aspectRatio: 2.5
+                    formats: WEBP
+                    quality: 100
+                )
                 title
             }
             body {
