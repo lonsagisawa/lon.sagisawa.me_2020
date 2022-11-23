@@ -14,6 +14,7 @@ const BioSocial = (): any => {
                 href="https://github.com/lonsagisawa"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
             >
                 <Github size="2rem" />
             </a>
@@ -21,6 +22,7 @@ const BioSocial = (): any => {
                 href="https://social.vivaldi.net/@lonsagisawa"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Vivaldi Social"
             >
                 <Mastodon size="2rem" />
             </a>
@@ -28,6 +30,7 @@ const BioSocial = (): any => {
                 href="https://twitter.com/lsgsw"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitter"
             >
                 <Twitter size="2rem" />
             </a>
@@ -35,6 +38,7 @@ const BioSocial = (): any => {
                 href="https://twitch.tv/lonsagisawa"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitch"
             >
                 <Twitch size="2rem" />
             </a>
