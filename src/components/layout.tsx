@@ -1,5 +1,7 @@
 import styled from "@emotion/styled"
 import { Slice } from "gatsby"
+import "@fontsource/inter/variable.css"
+import "../prism-ctp.css"
 import "../global.css"
 
 interface LayoutProps {
