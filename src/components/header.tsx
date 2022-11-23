@@ -19,7 +19,7 @@ const Title = styled.h1({
     fontSize: "3rem",
     fontWeight: 900,
     lineHeight: 0.9,
-    letterSpacing: "-0.05em",
+    letterSpacing: "-0.0334em",
 })
 
 const Header = (): any => {
