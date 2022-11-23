@@ -14,6 +14,7 @@ const Card = styled.a({
     padding: "1rem 1.25rem",
     borderRadius: "1rem",
     backgroundColor: "#f9fafd",
+    border: "2px solid #f9fafd",
     transition: "all 100ms ease-out",
     boxShadow: "0px 2px 6px 0px rgba(32, 32, 44, 0.25);",
     ":hover": {
@@ -22,8 +23,10 @@ const Card = styled.a({
     "@media (prefers-color-scheme: dark)": {
         backgroundColor: "#17171f",
         boxShadow: "none",
+        border: "2px solid #17171f",
         ":hover": {
-            backgroundColor: "#1b1b24",
+            border: "2px solid #f4d059",
+            backgroundColor: "#1f1f29",
             boxShadow: "none",
         },
     },
