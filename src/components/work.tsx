@@ -1,5 +1,10 @@
 import styled from "@emotion/styled"
 
+interface PillProps {
+    bgColor: string
+    textColor: string
+}
+
 const Wrapper = styled.div({
     display: "grid",
     gap: "1rem",
@@ -45,9 +50,9 @@ const Pill = styled.span(
         borderRadius: "999px",
         display: "inline-block",
     },
-    (props) => ({
-        backgroundColor: props.bgcolor,
-        color: props.textcolor,
+    (props: PillProps) => ({
+        backgroundColor: props.bgColor,
+        color: props.textColor,
     })
 )
 
@@ -58,13 +63,13 @@ const Work = (): any => {
                 <h2>kitahina.co</h2>
                 <p>
                     2022年
-                    <Pill bgcolor="#663399" textcolor="white">
+                    <Pill bgColor="#663399" textColor="white">
                         Gatsby
                     </Pill>
-                    <Pill bgcolor="#fcb32c" textcolor="white">
+                    <Pill bgColor="#fcb32c" textColor="white">
                         MDX
                     </Pill>
-                    <Pill bgcolor="black" textcolor="white">
+                    <Pill bgColor="black" textColor="white">
                         styled-components
                     </Pill>
                 </p>
@@ -76,13 +81,13 @@ const Work = (): any => {
                 <h2>lon.sagisawa.me</h2>
                 <p>
                     2020年
-                    <Pill bgcolor="#663399" textcolor="white">
+                    <Pill bgColor="#663399" textColor="white">
                         Gatsby
                     </Pill>
-                    <Pill bgcolor="#003cbe" textcolor="white">
+                    <Pill bgColor="#003cbe" textColor="white">
                         Contentful
                     </Pill>
-                    <Pill bgcolor="#D26AC2" textcolor="white">
+                    <Pill bgColor="#D26AC2" textColor="white">
                         Emotion
                     </Pill>
                 </p>
@@ -96,10 +101,10 @@ const Work = (): any => {
                 <h2>Stardust</h2>
                 <p>
                     2017年
-                    <Pill bgcolor="#f0772b" textcolor="white">
+                    <Pill bgColor="#f0772b" textColor="white">
                         Handlebars
                     </Pill>
-                    <Pill bgcolor="#712cf9" textcolor="white">
+                    <Pill bgColor="#712cf9" textColor="white">
                         Bootstrap
                     </Pill>
                 </p>
@@ -112,13 +117,13 @@ const Work = (): any => {
                 <h2>アイドルマスターシリーズ SKK辞書</h2>
                 <p>
                     2016年
-                    <Pill bgcolor="black" textcolor="white">
+                    <Pill bgColor="black" textColor="white">
                         SKK辞書
                     </Pill>
-                    <Pill bgcolor="black" textcolor="white">
+                    <Pill bgColor="black" textColor="white">
                         bash
                     </Pill>
-                    <Pill bgcolor="black" textcolor="white">
+                    <Pill bgColor="black" textColor="white">
                         sed
                     </Pill>
                 </p>
