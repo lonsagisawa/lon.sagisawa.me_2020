@@ -5,7 +5,7 @@ const Background = styled.footer({
     backgroundColor: "#20202c",
     color: "#acb0bf",
     marginTop: "2rem",
-    padding: "2rem 0",
+    padding: "3rem 0",
     "@media (prefers-color-scheme: dark)": {
         borderTop: "1px solid rgba(172, 176, 191, 0.5)",
     },
