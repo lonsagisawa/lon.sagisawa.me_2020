@@ -1,5 +1,5 @@
+import BioSocial from "./bio-social"
 import styled from "@emotion/styled"
-import { Github, Twitter, Twitch, Mastodon } from "react-bootstrap-icons"
 
 const Container = styled.div({
     display: "flex",
@@ -21,47 +21,12 @@ const BioText = styled.div({
     },
 })
 
-const BioSocial = styled.div({
-    svg: {
-        marginRight: "0.75rem",
-    },
-})
-
 const Bio = (): any => {
     return (
         <Container>
             <BioText>
                 <h2>Lon Sagisawa / 鷺沢ろん</h2>
-                <BioSocial>
-                    <a
-                        href="https://github.com/lonsagisawa"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Github size="2rem" />
-                    </a>
-                    <a
-                        href="https://social.vivaldi.net/@lonsagisawa"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Mastodon size="2rem" />
-                    </a>
-                    <a
-                        href="https://twitter.com/lsgsw"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Twitter size="2rem" />
-                    </a>
-                    <a
-                        href="https://twitch.tv/lonsagisawa"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Twitch size="2rem" />
-                    </a>
-                </BioSocial>
+                <BioSocial />
                 <p>
                     1995年、日本国・福井県生まれ。
                     <br />
