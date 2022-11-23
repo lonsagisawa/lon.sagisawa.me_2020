@@ -42,7 +42,12 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
     )
 }
 
-export const Head = (): any => <Helmet title="Lon Sagisawa" />
+export const Head = (): any => (
+    <Helmet
+        title="Lon Sagisawa"
+        description="A personal portfolio and blog of Lon Sagisawa."
+    />
+)
 
 export default Index
 
