@@ -72,6 +72,7 @@ const config: GatsbyConfig = {
                                     date: edge.node.date,
                                     url:
                                         site.siteMetadata.siteUrl +
+                                        "/" +
                                         edge.node.year +
                                         "/" +
                                         edge.node.month +
@@ -79,6 +80,7 @@ const config: GatsbyConfig = {
                                         edge.node.slug,
                                     guid:
                                         site.siteMetadata.siteUrl +
+                                        "/" +
                                         edge.node.year +
                                         "/" +
                                         edge.node.month +
