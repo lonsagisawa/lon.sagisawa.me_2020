@@ -6,7 +6,8 @@ import Helmet from "../components/helmet"
 import styled from "@emotion/styled"
 
 const CoverImg = styled(GatsbyImage)({
-    boxShadow: "1rem 1rem 0px 0px rgb(244, 208, 89)",
+    boxShadow: "1rem 1rem 0px 0px #f4d059",
+    border: "2px solid #f4d059",
     marginBottom: "2rem",
     marginRight: "1rem",
 })
@@ -53,7 +54,8 @@ const PostBody = styled.article({
 })
 
 const PostDate = styled.p({
-    fontSize: "0.9rem",
+    fontSize: "0.85rem",
+    fontWeight: 700,
 })
 
 const Post = ({ data }: PageProps<Queries.PostPageQuery>): any => {
