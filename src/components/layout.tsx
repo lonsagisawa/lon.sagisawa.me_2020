@@ -1,42 +1,27 @@
-import * as React from "react"
-import Header from "./header"
-import Bio from "./bio"
 import styled from "@emotion/styled"
-import { SanitizeCSS } from "emotion-sanitize"
+import { Slice } from "gatsby"
 import "@fontsource/inter/variable.css"
-import "@fontsource/jetbrains-mono"
+import "../prism-ctp.css"
+import "../global.css"
 
-const Wrapper = styled.div({
-    fontFamily: '"InterVariable", "BIZ UDPGothic", "Hiragino Sans", "sans-serif"',
-    backgroundColor: '#f2f2f0',
-    color: '#3f374a',
-    /* Dark mode */
-    '@media (prefers-color-scheme: dark)': {
-        backgroundColor: '#111',
-        color: "#f2f2f0",
-    },
-    'code, pre': {
-        fontFamily: '"JetBrains Mono", "monospace"',
-    },
-    'h1, h2, h3, h4, h5, h6': {
-        marginBlock: 0,
-    }
-})
+interface LayoutProps {
+    pageTitle?: string
+    children: any
+}
 
 const Container = styled.main({
-    padding: '0 1rem',
-    margin: '0 auto 2rem',
-    maxWidth: '56rem',
+    maxWidth: "51rem",
+    margin: "0 auto",
+    padding: "0 1.5rem",
 })
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }: LayoutProps): any => {
     return (
-        <Wrapper>
-            <SanitizeCSS sanitize reduceMotion />
-            <Header />
+        <>
+            <Slice alias="header" />
             <Container>{children}</Container>
-            <Bio />
-        </Wrapper>
+            <Slice alias="footer" />
+        </>
     )
 }
 

@@ -1,84 +1,75 @@
+import path from "path"
 import type { GatsbyNode } from "gatsby"
 
-const path = require("path")
-const fs = require("fs")
-
-exports.createPages = async ({ graphql, actions, reporter }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+    graphql,
+    actions,
+}) => {
     const { createPage } = actions
 
-    const result = await graphql(
-        `
-        {
-            allContentfulPost(sort: {fields: date, order: ASC}) {
+    actions.createSlice({
+        id: "header",
+        component: path.resolve("./src/components/header.tsx"),
+    })
+    actions.createSlice({
+        id: "footer",
+        component: path.resolve("./src/components/footer.tsx"),
+    })
+
+    const result = await graphql(`
+        query CreatePost {
+            allContentfulPost(sort: { date: DESC }) {
                 edges {
                     node {
+                        slug
                         id
                         year: date(formatString: "YYYY")
                         month: date(formatString: "MM")
-                        slug
                     }
                     next {
-                        title
-                        prefix: date(formatString: "/YYYY/MM/")
-                        slug
                         id
-                        cover {
-                            gatsbyImageData(
-                                width: 360,
-                                layout: FULL_WIDTH,
-                                quality: 90,
-                                placeholder: NONE,
-                                aspectRatio: 2.5
-                            )
-                        }
                     }
                     previous {
-                        title
-                        prefix: date(formatString: "/YYYY/MM/")
-                        slug
                         id
-                        cover {
-                            gatsbyImageData(
-                                width: 360,
-                                layout: FULL_WIDTH,
-                                quality: 90,
-                                placeholder: NONE,
-                                aspectRatio: 2.5
-                            )
-                        }
                     }
                 }
             }
         }
-        `
-    )
-
-    if ( result.errors ) {
-        reporter.panicOnBuild(`Error while running GraphQL query.`)
-        return
-    }
+    `)
 
     const { edges } = result.data.allContentfulPost
 
-    edges.forEach(edge => {
-        createPage({
-            // permalink
-            path: `/${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
-            component: path.resolve("./src/templates/post.tsx"),
-            ownerNodeId: `${edge.node.id}`,
-            context: {
-                id: edge.node.id,
-                next: edge.next,
-                prev: edge.previous
-            },
-        })
-    });
-}
-
-exports.onPostBuild = () => {
-    fs.copyFile(`./vercel.json`, `./public/vercel.json`, (err) => {
-        if (err) {
-            throw err;
+    edges.forEach((edge) => {
+        if (edge.next == null) {
+            createPage({
+                path: `${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
+                component: path.resolve("./src/templates/post.tsx"),
+                context: {
+                    id: edge.node.id,
+                    nextid: null,
+                    previd: edge.previous.id,
+                },
+            })
+        } else if (edge.previous == null) {
+            createPage({
+                path: `${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
+                component: path.resolve("./src/templates/post.tsx"),
+                context: {
+                    id: edge.node.id,
+                    nextid: edge.next.id,
+                    previd: null,
+                },
+            })
+        } else {
+            createPage({
+                path: `${edge.node.year}/${edge.node.month}/${edge.node.slug}`,
+                component: path.resolve("./src/templates/post.tsx"),
+                context: {
+                    id: edge.node.id,
+                    nextid: edge.next.id,
+                    previd: edge.previous.id,
+                },
+            })
         }
-    });
-};
+    })
+}

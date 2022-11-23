@@ -1,30 +1,18 @@
-import { graphql, PageProps, Link } from "gatsby"
 import Layout from "../components/layout"
-import Helmet from "../components/helmet"
-import Bio from "../components/bio"
-import Work from "../components/work"
 import PostLink from "../components/post-link"
+import { graphql, PageProps } from "gatsby"
 import styled from "@emotion/styled"
 
-const Headline = styled.h2({
+const Title = styled.h2({
     fontSize: "1.5rem",
     fontWeight: 700,
-    margin: "1rem 0",
-    display: "inline-flex",
-    flexDirection: "column",
-    ":after": {
-        width: "50%",
-        borderBottom: "0.25rem solid",
-        content: "''",
-    },
+    marginBottom: "1rem",
 })
 
-const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
+const Blog = ({ data }: PageProps<Queries.BlogQuery>): any => {
     return (
         <Layout>
-            <Headline>プロフィール</Headline>
-            <Bio />
-            <Headline>最新記事</Headline>
+            <Title>すべての記事</Title>
             {data.allContentfulPost.edges.map((edge) => (
                 <>
                     <PostLink
@@ -35,20 +23,15 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
                     />
                 </>
             ))}
-            <PostLink title="すべての記事を読む" url="/blog" />
-            <Headline>制作物</Headline>
-            <Work />
         </Layout>
     )
 }
 
-export const Head = (): any => <Helmet title="Lon Sagisawa" />
-
-export default Index
+export default Blog
 
 export const query = graphql`
-    query Index {
-        allContentfulPost(limit: 3) {
+    query Blog {
+        allContentfulPost {
             edges {
                 node {
                     date(formatString: "YYYY年MM月DD日")

@@ -1,42 +1,45 @@
-import * as React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
+const Background = styled.div({
+    marginBottom: "1rem",
+})
+
 const Container = styled.header({
-    margin: '0 auto',
-    maxWidth: '56rem',
-    padding: '0 1rem',
-    minHeight: '14rem',
-    position: 'relative',
-    '@media screen and (min-width: 480px)': {
-        minHeight: '16rem',
-    },
+    minHeight: "12rem",
+    maxWidth: "51rem",
+    margin: "0 auto",
+    padding: "0 1.5rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
 })
 
 const Title = styled.h1({
-    display: 'block',
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    marginBlock: 0,
-})
-
-const TitleLink = styled(Link)({
-    fontSize: "3.5rem",
-    lineHeight: 1,
+    fontSize: "3rem",
     fontWeight: 900,
-    letterSpacing: "-0.05em",
-    color: "#efb864",
-    textDecoration: "none",
+    lineHeight: 0.9,
+    letterSpacing: "-0.0334em",
+    textShadow: "0.25rem 0.25rem #f4d059",
+    "@media (prefers-color-scheme: dark)": {
+        color: "#f4d059",
+        textShadow: "none",
+    },
 })
 
-const Header = () => {
+const Header = (): any => {
     return (
-        <Container>
-            <Title>
-                <TitleLink to="/">Lon<br/>Sagisawa</TitleLink>
-            </Title>
-        </Container>
+        <Background>
+            <Container>
+                <Title>
+                    <Link to="/">
+                        Lon
+                        <br />
+                        Sagisawa
+                    </Link>
+                </Title>
+            </Container>
+        </Background>
     )
 }
 

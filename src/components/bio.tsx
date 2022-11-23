@@ -1,78 +1,51 @@
-import * as React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import BioSocial from "./bio-social"
 import styled from "@emotion/styled"
 
-const Bio = () => {
-    const Footer = styled.footer({
-        backgroundColor: '#3f374a',
-        color: 'rgba(242, 242, 240, 0.5)',
-        padding: '3rem 0',
-    })
+const Container = styled.div({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    "@media screen and (min-width: 480px)": {
+        flexDirection: "row",
+        justifyContent: "space-around",
+    },
+})
 
-    const Container = styled.div({
-        fontWeight: 500,
-        padding: '0 1rem',
-        margin: '0 auto',
-        maxWidth: '56rem',
-        '@media screen and (min-width: 480px)': {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            justifyContent: 'space-between',
-        },
-        a: {
-            color: 'inherit',
-            textDecoration: 'underline',
-            transition: 'all 100ms ease-out',
-            ':hover': {
-                color: '#f2f2f0',
-            }
-        },
-    })
+const BioText = styled.div({
+    fontSize: "0.9rem",
+    h2: {
+        fontSize: "1.5rem",
+        fontWeight: 700,
+        marginBottom: "0.5rem",
+    },
+})
 
-    const Left = styled.div({
-        paddingBottom: '2rem',
-        '@media screen and (min-width: 480px)': {
-            paddingBottom: 0,
-        },
-    })
-
-    const Right = styled.div({
-        margin: 'auto 0',
-        textAlign: 'center',
-        fontSize: '2rem',
-        lineHeight: 1,
-        '@media screen and (min-width: 480px)': {
-            textAlign: 'right',
-        },
-    })
-
-    const BioName = styled.p({
-        fontWeight: 900,
-        fontSize: '2rem',
-        lineHeight: 1,
-        letterSpacing: '-0.05em',
-        marginBlock: 0,
-        marginBottom: '0.5rem',
-    })
-
-    const BioText = styled.p({
-        fontSize: '0.75rem',
-        marginBlock: 0,
-    })
-
+const Bio = (): any => {
     return (
-        <Footer>
-            <Container>
-                <Left>
-                    <BioName>Lon<br />Sagisawa</BioName>
-                    <BioText>Content All rights reserved. Code is <a href="https://github.com/lonsagisawa/lon.sagisawa.me">available</a> at 0BSD license.<br />Powered by <a href="https://www.gatsbyjs.com">Gatsby</a>. Hosted on <a href="https://vercel.com">Vercel</a>.</BioText>
-                </Left>
-                <Right>
-                    <a href="https://github.com/lonsagisawa"><FontAwesomeIcon icon={ faGithub } /></a>
-                </Right>
-            </Container>
-        </Footer>
+        <Container>
+            <BioText>
+                <h2>Lon Sagisawa / 鷺沢ろん</h2>
+                <BioSocial />
+                <p>
+                    1995年、日本国・福井県生まれ。
+                    <br />
+                    個人開発として15年以上のHTMLとCSSのコーディング経験、また10年以上のLinuxサーバー管理(Debian系,
+                    Arch Linux)の経験を持つ。
+                    <br />
+                    2014年頃から費用を抑えながらパフォーマンスの優れたWebサイトを構築するためJekyll,
+                    Hexo,
+                    Hugoといった静的サイトジェネレーターでのWebサイト構築を行う中、Gatsbyとの出会いをきっかけにモダンWebフロントエンドの世界を知る。
+                    <br />
+                    従前から取り組んでいた静的サイト構築がJamstackとして飛躍的な発展を遂げる中で、TypeScript,
+                    React, CSS-in-JS,
+                    GraphQLなど、Gatsbyで使われるものを中心にWebフロントエンドスタックの習得に励む。
+                    <br />
+                    趣味としてビデオゲーム(音楽ゲーム等)、写真撮影、F1観戦、eスポーツ観戦、P業(喜多日菜子,
+                    周防桃子, 桑山千雪)を嗜む。
+                </p>
+            </BioText>
+        </Container>
     )
 }
 

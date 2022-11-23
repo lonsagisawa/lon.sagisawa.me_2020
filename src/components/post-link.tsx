@@ -1,63 +1,56 @@
-import * as React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
 
-const PostLink = ({ post }) => {
-    const { title, date } = post;
-    const description = post.description.description;
-    const coverImg = getImage(post.cover);
-    const coverTitle = post.cover.title;
-    const pageLink = `/${post.year}/${post.month}/${post.slug}`
+interface PostLinkProps {
+    title: string
+    url: string
+    date: string
+    description: string
+}
 
-    const PostDesc = styled.div({
-        marginTop: '0.5rem',
-        marginBottom: '1.5rem',
-    })
+const WrapperLink = styled(Link)({
+    display: "block",
+    borderWidth: "0.01px 0",
+    borderColor: "#8d8d99",
+    borderStyle: "solid",
+    transition: "all 100ms ease-out",
+    ":hover": {
+        backgroundColor: "#e6e9f2",
+    },
+    "@media (prefers-color-scheme: dark)": {
+        borderColor: "rgba(172, 176, 191, 0.5)",
+        ":hover": {
+            backgroundColor: "#2d2d3d",
+        },
+    },
+})
 
-    const PostTitle = styled.h2({
-        fontSize: '1.5rem',
-        fontWeight: 700,
-        marginBottom: '0.25rem',
-    })
+const Container = styled.div({
+    margin: "0.5rem",
+})
 
-    const PostTitleLink = styled(Link)({
-        textDecoration: 'underline',
-        color: 'inherit',
-        ':hover': {
-            color: '#80a3b0',
-            transition: 'all 100ms ease-out',
-        }
-    })
-    
-    const PostDate = styled.p({
-        fontSize: '0.85rem',
-        fontWeight: 700,
-        opacity: 0.75,
-        marginBlock: '0.25rem',
-    })
+const Date = styled.p({
+    fontSize: "0.8rem",
+})
 
-    const PostImage = styled(GatsbyImage)({
-        borderRadius: '0.5rem',
-    })
+const Title = styled.span({
+    fontWeight: 700,
+    fontSize: "1.1rem",
+})
 
-    const PostExcerpt = styled.p({
-        marginBlock: 0,
-    })
+const Description = styled.p({
+    fontSize: "0.9rem",
+})
 
+const PostLink = ({ title, url, date, description }: PostLinkProps): any => {
     return (
-        <div>
-            <PostImage
-                image = { coverImg }
-                alt = { coverTitle }
-                loading = 'eager'
-            />
-            <PostDesc>
-                <PostTitle><PostTitleLink to={ pageLink }>{ title }</PostTitleLink></PostTitle>
-                <PostDate>{ date }</PostDate>
-                <PostExcerpt>{ description }</PostExcerpt>
-            </PostDesc>
-        </div>
+        <WrapperLink to={url}>
+            <Container>
+                <Date>{date}</Date>
+                <Title>{title}</Title>
+                <Description>{description}</Description>
+            </Container>
+        </WrapperLink>
     )
 }
 

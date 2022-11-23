@@ -1,0 +1,184 @@
+/* Catppuccin Color Scheme for Prism.js
+Catppuccin: https://github.com/catppuccin/catppuccin
+Prism: https://github.com/PrismJS/prism */
+
+:root {
+    /* Latte */
+    --ctp-color-rosewater: #dc8a78;
+    --ctp-color-flamingo: #dd7878;
+    --ctp-color-pink: #ea76cb;
+    --ctp-color-mauve: #8839ef;
+    --ctp-color-red: #d20f39;
+    --ctp-color-maroon: #e64553;
+    --ctp-color-peach: #fe640b;
+    --ctp-color-yellow: #df8e1d;
+    --ctp-color-green: #40a02b;
+    --ctp-color-teal: #179299;
+    --ctp-color-sky: #04a5e5;
+    --ctp-color-sapphire: #209fb5;
+    --ctp-color-blue: #1e66f5;
+    --ctp-color-lavender: #7287fd;
+    --ctp-color-text: #4c4f69;
+    --ctp-color-subtext1: #5c5f77;
+    --ctp-color-subtext0: #6c6f85;
+    --ctp-color-overlay2: #7c7f93;
+    --ctp-color-overlay1: #8c8fa1;
+    --ctp-color-overlay0: #9ca0b0;
+    --ctp-color-surface2: #acb0be;
+    --ctp-color-surface1: #bcc0cc;
+    --ctp-color-surface0: #ccd0da;
+    --ctp-color-base: #eff1f5;
+    --ctp-color-mantle: #e6e9ef;
+    --ctp-color-crust: #dce0e8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Macchiato */
+        --ctp-color-rosewater: #f4dbd6;
+        --ctp-color-flamingo: #f0c6c6;
+        --ctp-color-pink: #f5bde6;
+        --ctp-color-mauve: #c6a0f6;
+        --ctp-color-red: #ed8796;
+        --ctp-color-maroon: #ee99a0;
+        --ctp-color-peach: #f5a97f;
+        --ctp-color-yellow: #eed49f;
+        --ctp-color-green: #a6da95;
+        --ctp-color-teal: #8bd5ca;
+        --ctp-color-sky: #91d7e3;
+        --ctp-color-sapphire: #7dc4e4;
+        --ctp-color-blue: #8aadf4;
+        --ctp-color-lavender: #b7bdf8;
+        --ctp-color-text: #cad3f5;
+        --ctp-color-subtext1: #b8c0e0;
+        --ctp-color-subtext0: #a5adcb;
+        --ctp-color-overlay2: #939ab7;
+        --ctp-color-overlay1: #8087a2;
+        --ctp-color-overlay0: #6e738d;
+        --ctp-color-surface2: #5b6078;
+        --ctp-color-surface1: #494d64;
+        --ctp-color-surface0: #363a4f;
+        --ctp-color-base: #24273a;
+        --ctp-color-mantle: #1e2030;
+        --ctp-color-crust: #181926;
+    }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--ctp-color-text);
+    background: none;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: var(--ctp-color-base);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--ctp-color-subtext1);
+}
+
+.token.punctuation {
+    color: var(--ctp-color-maroon);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+    color: var(--ctp-color-peach);
+}
+
+.token.function-name {
+    color: var(--ctp-color-text);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+    color: var(--ctp-color-mauve);
+}
+
+.token.property,
+.token.constant,
+.token.symbol {
+    color: var(--ctp-color-green);
+}
+
+.token.class-name {
+    color: var(--ctp-color-peach);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+    font-weight: 700;
+    color: var(--ctp-color-sky);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+    color: var(--ctp-color-green);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+    color: var(--ctp-color-text);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.inserted {
+    color: var(--ctp-color-green);
+}

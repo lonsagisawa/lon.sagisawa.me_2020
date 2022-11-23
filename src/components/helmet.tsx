@@ -1,33 +1,15 @@
-import * as React from "react"
-import type { HeadProps } from "gatsby"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+interface HelmProps {
+    title: string
+    description?: string
+}
 
-const Helmet = ({ title, description, pathname, children }: HeadProps) => {
-    const {
-        title: defaultTitle,
-        description: defaultDescription,
-        siteUrl,
-        twitterUsername
-    } = useSiteMetadata()
-
-    const helm = {
-        title: title || defaultTitle,
-        description: description || defaultDescription,
-        url: `${siteUrl}${pathname || ``}`,
-        twitterUsername,
-    }
-
+const Helmet = ({ title, description }: HelmProps): any => {
     return (
         <>
-            <title>{ helm.title }</title>
-            <meta name="description" content={ helm.description } />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter.title" content={ helm.title } />
-            <meta name="twitter.url" content={ helm.url } />
-            <meta name="twitter.description" content={ helm.description } />
-            <meta name="twitter:creator" content={ helm.twitterUsername } />
-            { children }
+            <title>{title}</title>
+            <meta name="description" content={description} />
         </>
     )
 }
+
 export default Helmet
