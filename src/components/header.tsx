@@ -20,6 +20,11 @@ const Title = styled.h1({
     fontWeight: 900,
     lineHeight: 0.9,
     letterSpacing: "-0.0334em",
+    textShadow: "0.25rem 0.25rem #f4d059",
+    "@media (prefers-color-scheme: dark)": {
+        color: "#f4d059",
+        textShadow: "none",
+    },
 })
 
 const Header = (): any => {
