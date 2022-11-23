@@ -1,10 +1,18 @@
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import { graphql, PageProps } from "gatsby"
+import styled from "@emotion/styled"
+
+const Title = styled.h2({
+    fontSize: "1.5rem",
+    fontWeight: 700,
+    marginBottom: "1rem",
+})
 
 const Blog = ({ data }: PageProps<Queries.BlogQuery>): any => {
     return (
-        <Layout pageTitle="すべてのブログ記事">
+        <Layout>
+            <Title>すべての記事</Title>
             {data.allContentfulPost.edges.map((edge) => (
                 <>
                     <PostLink
