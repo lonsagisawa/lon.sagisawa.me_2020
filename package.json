@@ -22,6 +22,7 @@
         "dotenv": "^16.0.3",
         "gatsby": "^5.1.0",
         "gatsby-plugin-emotion": "^8.1.0",
+        "gatsby-plugin-feed": "^5.1.0",
         "gatsby-plugin-image": "^3.1.0",
         "gatsby-plugin-manifest": "^5.1.0",
         "gatsby-plugin-offline": "^6.1.0",

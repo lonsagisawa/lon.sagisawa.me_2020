@@ -7,7 +7,8 @@ require("dotenv").config({
 const config: GatsbyConfig = {
     siteMetadata: {
         title: "Lon Sagisawa",
-        siteUrl: "https://lon.sagisawa.me",
+        description: "A personal portfolio and blog of Lon Sagisawa.",
+        siteUrl: "https://lon.sagisawa.me/",
     },
     jsxRuntime: "automatic",
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -40,6 +41,82 @@ const config: GatsbyConfig = {
                             withWebp: true,
                             backgroundColor: "#797a80",
                         },
+                    },
+                ],
+            },
+        },
+        {
+            resolve: "gatsby-plugin-feed",
+            options: {
+                query: `
+                    {
+                        site {
+                            siteMetadata {
+                                title
+                                description
+                                siteUrl
+                                site_url: siteUrl
+                            }
+                        }
+                    }
+                `,
+                feeds: [
+                    {
+                        serialize: ({ query: { site, allContentfulPost }: any }) => {
+                            return allContentfulPost.edges.map((edge) => {
+                                return Object.assign({}, edge.node, {
+                                    description:
+                                        edge.node.description.description,
+                                    date: edge.node.date,
+                                    url:
+                                        site.siteMetadata.siteUrl +
+                                        edge.node.year +
+                                        "/" +
+                                        edge.node.month +
+                                        "/" +
+                                        edge.node.slug,
+                                    guid:
+                                        site.siteMetadata.siteUrl +
+                                        edge.node.year +
+                                        "/" +
+                                        edge.node.month +
+                                        "/" +
+                                        edge.node.slug,
+                                    custom_elements: [
+                                        {
+                                            "content.encoded":
+                                                edge.node.body
+                                                    .childMarkdownRemark.html,
+                                        },
+                                    ],
+                                })
+                            })
+                        },
+                        query: `
+                        {
+                            allContentfulPost(sort: {date: DESC}) {
+                              edges {
+                                node {
+                                  description {
+                                    description
+                                  }
+                                  date
+                                  year: date(formatString: "YYYY")
+                                  month: date(formatString: "MM")
+                                  title
+                                  slug
+                                  body {
+                                    childMarkdownRemark {
+                                      html
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        `,
+                        output: "/rss.xml",
+                        title: "Lon Sagisawa",
                     },
                 ],
             },
