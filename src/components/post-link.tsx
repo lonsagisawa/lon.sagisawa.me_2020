@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
 interface PostLinkProps {
-    title: string
+    title?: string
     url: string
-    date: string
-    description: string
+    date?: string
+    description?: string
 }
 
 const WrapperLink = styled(Link)({
@@ -42,7 +42,12 @@ const Description = styled.p({
     fontSize: "0.9rem",
 })
 
-const PostLink = ({ title, url, date, description }: PostLinkProps): any => {
+const PostLink = ({
+    title,
+    url,
+    date,
+    description,
+}: PostLinkProps): JSX.Element => {
     return (
         <WrapperLink to={url}>
             <Container>

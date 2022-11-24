@@ -56,7 +56,7 @@ const Pill = styled.span(
     })
 )
 
-const Work = (): any => {
+const Work = (): JSX.Element => {
     return (
         <Wrapper>
             <Card href="https://github.com/lonsagisawa/kitahina.co">

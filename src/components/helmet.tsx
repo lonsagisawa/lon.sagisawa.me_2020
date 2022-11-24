@@ -3,7 +3,7 @@ interface HelmProps {
     description?: string
 }
 
-const Helmet = ({ title, description }: HelmProps): any => {
+const Helmet = ({ title, description }: HelmProps): JSX.Element => {
     return (
         <>
             <title>{title}</title>

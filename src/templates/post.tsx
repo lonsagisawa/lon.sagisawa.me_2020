@@ -58,7 +58,7 @@ const PostDate = styled.p({
     fontWeight: 700,
 })
 
-const Post = ({ data }: PageProps<Queries.PostPageQuery>): any => {
+const Post = ({ data }: PageProps<Queries.PostPageQuery>): JSX.Element => {
     return (
         <Layout>
             <CoverImg
@@ -132,7 +132,9 @@ export const query = graphql`
     }
 `
 
-export const Head = ({ data }: PageProps<Queries.PostPageQuery>): any => (
+export const Head = ({
+    data,
+}: PageProps<Queries.PostPageQuery>): JSX.Element => (
     <Helmet
         title={data.post.title + " | Lon Sagisawa"}
         description={data.post.description.description}

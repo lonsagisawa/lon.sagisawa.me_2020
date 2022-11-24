@@ -1,4 +1,4 @@
-import { graphql, PageProps, Link } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import Helmet from "../components/helmet"
 import Bio from "../components/bio"
@@ -19,7 +19,7 @@ const Headline = styled.h2({
     },
 })
 
-const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
+const Index = ({ data }: PageProps<Queries.IndexQuery>): JSX.Element => {
     return (
         <Layout>
             <Headline>プロフィール</Headline>
@@ -42,7 +42,7 @@ const Index = ({ data }: PageProps<Queries.IndexQuery>): any => {
     )
 }
 
-export const Head = (): any => (
+export const Head = (): JSX.Element => (
     <Helmet
         title="Lon Sagisawa"
         description="A personal portfolio and blog of Lon Sagisawa."

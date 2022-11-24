@@ -21,7 +21,7 @@ const BioText = styled.div({
     },
 })
 
-const Bio = (): any => {
+const Bio = (): JSX.Element => {
     return (
         <Container>
             <BioText>

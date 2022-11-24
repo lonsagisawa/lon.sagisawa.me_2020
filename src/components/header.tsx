@@ -27,7 +27,7 @@ const Title = styled.h1({
     },
 })
 
-const Header = (): any => {
+const Header = (): JSX.Element => {
     return (
         <Background>
             <Container>

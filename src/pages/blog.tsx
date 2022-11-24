@@ -9,7 +9,7 @@ const Title = styled.h2({
     marginBottom: "1rem",
 })
 
-const Blog = ({ data }: PageProps<Queries.BlogQuery>): any => {
+const Blog = ({ data }: PageProps<Queries.BlogQuery>): JSX.Element => {
     return (
         <Layout>
             <Title>すべての記事</Title>

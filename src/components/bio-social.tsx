@@ -7,7 +7,7 @@ const Container = styled.div({
     },
 })
 
-const BioSocial = (): any => {
+const BioSocial = (): JSX.Element => {
     return (
         <Container>
             <a

@@ -5,8 +5,7 @@ import "../prism-ctp.css"
 import "../global.css"
 
 interface LayoutProps {
-    pageTitle?: string
-    children: any
+    children?: React.ReactNode
 }
 
 const Container = styled.main({
@@ -15,7 +14,7 @@ const Container = styled.main({
     padding: "0 1.5rem",
 })
 
-const Layout = ({ pageTitle, children }: LayoutProps): any => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
     return (
         <>
             <Slice alias="header" />

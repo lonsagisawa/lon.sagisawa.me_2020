@@ -65,7 +65,7 @@ const config: GatsbyConfig = {
                         serialize: ({
                             query: { site, allContentfulPost },
                         }): any => {
-                            return allContentfulPost.edges.map((edge) => {
+                            return allContentfulPost.edges.map((edge): any => {
                                 return Object.assign({}, edge.node, {
                                     description:
                                         edge.node.description.description,

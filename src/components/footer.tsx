@@ -53,7 +53,7 @@ const SocialArray = styled.div({
     },
 })
 
-const Footer = (): any => {
+const Footer = (): JSX.Element => {
     return (
         <Background>
             <Container>
