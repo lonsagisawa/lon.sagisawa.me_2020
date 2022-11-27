@@ -23,6 +23,7 @@
         "gatsby": "^5.2.0",
         "gatsby-plugin-emotion": "^8.2.0",
         "gatsby-plugin-feed": "^5.2.0",
+        "gatsby-plugin-gatsby-cloud": "^5.2.0",
         "gatsby-plugin-image": "^3.2.0",
         "gatsby-plugin-manifest": "^5.2.0",
         "gatsby-plugin-offline": "^6.2.0",
