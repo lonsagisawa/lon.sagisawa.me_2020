@@ -53,7 +53,7 @@ export default Index
 
 export const query = graphql`
     query Index {
-        allContentfulPost(limit: 3) {
+        allContentfulPost(limit: 5, sort: { date: DESC }) {
             edges {
                 node {
                     date(formatString: "YYYY年MM月DD日")
