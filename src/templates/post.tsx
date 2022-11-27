@@ -38,7 +38,8 @@ const PostBody = styled.article({
         fontWeight: 700,
     },
     a: {
-        textDecoration: "underline 0.1px",
+        textDecoration: "underline",
+        textDecorationThickness: "1px",
         transition: "all 100ms ease-out",
         ":hover": {
             color: "rgb(244, 208, 89)",
