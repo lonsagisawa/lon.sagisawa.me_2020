@@ -151,7 +151,7 @@ const config: GatsbyConfig = {
                         {
                             /* Contentful fix */
                             urlPattern: /^https?:.*\/page-data\/.*\.json/,
-                            handler: `NetworkFirst`,
+                            handler: "NetworkFirst",
                         },
                     ],
                 },
