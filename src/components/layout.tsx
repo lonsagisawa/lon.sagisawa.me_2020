@@ -1,6 +1,10 @@
 import styled from "@emotion/styled"
 import { Slice } from "gatsby"
 import "@fontsource/inter/variable.css"
+import "../lineseed/100.css"
+import "../lineseed/300.css"
+import "../lineseed/700.css"
+import "../lineseed/900.css"
 import "../prism-ctp.css"
 import "../global.css"
 
