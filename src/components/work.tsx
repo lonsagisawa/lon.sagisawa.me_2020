@@ -63,18 +63,15 @@ const Work = (): JSX.Element => {
                 <h2>kitahina.co</h2>
                 <p>
                     2022年
-                    <Pill bgColor="#663399" textColor="white">
-                        Gatsby
+                    <Pill bgColor="#ff5d01" textColor="white">
+                        Astro
                     </Pill>
                     <Pill bgColor="#fcb32c" textColor="white">
                         MDX
                     </Pill>
-                    <Pill bgColor="black" textColor="white">
-                        styled-components
-                    </Pill>
                 </p>
                 <p>
-                    私のアイドルマスターシリーズ関連の活動をまとめる場所であり、喜多日菜子の宣伝も兼ねた小さなWebサイトです。以前はEleventyで構築されていましたが、現在はGatsby+MDXで構築されています。以前このブログはこのURLに置かれていました。
+                    私のアイドルマスターシリーズ関連の活動をまとめる場所であり、喜多日菜子の宣伝も兼ねた小さなWebサイトです。以前このブログはこのURLに置かれていました。
                 </p>
             </Card>
             <Card href="https://github.com/lonsagisawa/lon.sagisawa.me">
