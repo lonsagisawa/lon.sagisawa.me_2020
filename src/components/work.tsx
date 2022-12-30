@@ -59,6 +59,27 @@ const Pill = styled.span(
 const Work = (): JSX.Element => {
     return (
         <Wrapper>
+            <Card href="https://stream.kitahina.co">
+                <h2>STREAM@S</h2>
+                <p>
+                    2022年
+                    <Pill bgColor="#61dafb" textColor="black">
+                        React
+                    </Pill>
+                    <Pill bgColor="black" textColor="white">
+                        Next
+                    </Pill>
+                    <Pill bgColor="#38bdf8" textColor="black">
+                        Tailwind
+                    </Pill>
+                    <Pill bgColor="#12124b" textColor="white">
+                        Deno
+                    </Pill>
+                </p>
+                <p>
+                    アイドルマスターシリーズの楽曲のうち、サブスクリプションサービスで聴けるものをまとめたデータベースサイトです。
+                </p>
+            </Card>
             <Card href="https://github.com/lonsagisawa/kitahina.co">
                 <h2>kitahina.co</h2>
                 <p>
@@ -66,7 +87,7 @@ const Work = (): JSX.Element => {
                     <Pill bgColor="#ff5d01" textColor="white">
                         Astro
                     </Pill>
-                    <Pill bgColor="#fcb32c" textColor="white">
+                    <Pill bgColor="#fcb32c" textColor="black">
                         MDX
                     </Pill>
                 </p>
@@ -78,6 +99,9 @@ const Work = (): JSX.Element => {
                 <h2>lon.sagisawa.me</h2>
                 <p>
                     2020年
+                    <Pill bgColor="#61dafb" textColor="black">
+                        React
+                    </Pill>
                     <Pill bgColor="#663399" textColor="white">
                         Gatsby
                     </Pill>
