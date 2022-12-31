@@ -133,12 +133,20 @@ const config: GatsbyConfig = {
                 start_url: "/",
                 lang: "ja",
                 background_color: "#20202c",
-                theme_color: "#f4d059",
+                theme_color: "#20202c",
                 display: "minimal-ui",
                 icon: "src/images/logo.png",
                 icon_options: {
-                    purpose: "any maskable",
+                    purpose: "any",
                 },
+                icons: [
+                    {
+                        src: "src/images/maskable_icon.png",
+                        sizes: "512x512",
+                        type: "image/png",
+                        purpose: "maskable",
+                    },
+                ],
                 cache_busting_mode: "none",
             },
         },
