@@ -142,21 +142,7 @@ const config: GatsbyConfig = {
                 cache_busting_mode: "none",
             },
         },
-        {
-            resolve: "gatsby-plugin-offline",
-            options: {
-                workboxConfig: {
-                    globPatterns: ["**/icons*"],
-                    runtimeCaching: [
-                        {
-                            /* Contentful fix */
-                            urlPattern: /^https?:.*\/page-data\/.*\.json/,
-                            handler: "NetworkFirst",
-                        },
-                    ],
-                },
-            },
-        },
+        "gatsby-plugin-remove-serviceworker",
     ],
 }
 
